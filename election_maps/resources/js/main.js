@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
     
-
+    // detect click on controller LI
     $('li').click(function () {
        
         var selectedCounty = $(this).data('contest');
@@ -19,8 +19,7 @@ $(document).ready(function () {
             }
         })
 
-       // $('g').removeClass('selected');
-        //$(this).addClass('selected');
+   
         var photoURL = "resources\\images\\candidate_portraits\\";
 
         var url = "http://10.18.55.37/tickit/blade/election/event/27/Counties-Iowa-2020/?format=jsonp&callback=?&pretty=yes";
@@ -80,51 +79,3 @@ $(document).ready(function () {
 });
 
 
-// ------------------------------------------------------------------------------------------
-
-// var AP = "https://api.ap.org/v2/elections/2020-02-03?statepostal=IA&test=true&level=fipscode&format=json&apikey=qe8eqHGeSFvKpo31UpzkA2gymiPrSa9E";
-
-// $(function () {
-//     $.ajax({
-//         type: 'GET',
-//         url: 'https://api.ap.org/v2/elections/2020-02-03?statepostal=IA&test=true&level=fipscode&format=xml&apikey=qe8eqHGeSFvKpo31UpzkA2gymiPrSa9E',
-//         sucess: function (data) {
-//             console.log('success', data);
-//         }
-//     });
-// });
-
-
-
-// -------------------------------------------------------------------------------------------
-// var countyNameDisplay = document.getElementById("county-name-display");
-// var counties = document.querySelectorAll(".county");
-
-// for (var i = 0; i < counties.length; i++){
-//     // add click listeners to counties
-//     counties[i].addEventListener("click", function () {
-//         var selectedCounties = document.querySelectorAll('.selected');
-        
-//         // remove selected class from all counties
-//         selectedCounties.forEach(function (item, index, array) {
-//                 item.classList.remove("selected");
-//             });
-//         //add selected class to county 
-//         this.classList.add("selected");
-//         // update info box
-     
-//         countyNameDisplay.textContent = this.id;
-        
-        
-//     });
-// }
-
-//$.each(counties, function (i, countyShape) {
-
-  //  $(this).toggleClass('selected');
-
-    //if ($(this).data('contest') == selectedCounty) {
-      //  $(this).Class('selected');
-        //return false;
-    //}
-//})
