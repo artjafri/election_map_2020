@@ -13,9 +13,8 @@ $(document).ready(function () {
     })
 
     var photoURL = "/images/candidate_portraits/";
-    var url = "http://10.18.55.37/tickit/blade/election/event/27/Counties-Iowa-2020/?format=jsonp&callback=?&pretty=yes";
+    var url = "http://10.18.55.37/tickit/blade/election/event/28/IA-COUNTY-RESULTS/?format=jsonp&callback=?&pretty=yes";
     var countyNameDisplay = $('#county-name-display');
-    var contestId = selectedCounty//$(this).data('contest');
 
     $.ajax({
       type: "GET",
@@ -29,7 +28,7 @@ $(document).ready(function () {
         //data is counties
 
         $.each(data.ElectionEvent.contest, function (i, contestCounty) {
-          if (contestCounty.id == contestId) {
+          if (contestCounty.id == selectedCounty) {
             //HEADER
             var countyName = contestCounty.area.name;
             var updatedCountyName = countyName.substring(7, countyName.length);
