@@ -9,23 +9,28 @@
 	--maroon: #9e0b0f;
 	--black: #000000;
 	--secondary: #aaaaaa;
-	--bar-hieght: 100px;
+	--bar-height: 100px;
 }
 
 body {
-	height: 112.5%;
 	max-width: auto;
-	background: linear-gradient(85deg, rgba(0, 0, 0, 1) 0%, rgba(9, 9, 121, 1) 32%, rgba(0, 153, 255, 1) 100%);
 	font-family: 'Montserrat', sans-serif;
+}
+
+body#map {
+  width: 1920px;
+	height: 1080px;
 }
 
 * {
 	padding: 0;
 	margin: 0;
 }
+
 #page{
 	display: flex;
 	flex-direction: column;
+	background: linear-gradient(85deg, rgba(0, 0, 0, 1) 0%, rgba(9, 9, 121, 1) 32%, rgba(0, 153, 255, 1) 100%);
 }
 
 /* SIDEBAR-------------------------------------------------------------------------------------- */
@@ -86,7 +91,7 @@ body {
 	fill: white;
 	padding: 0;
 	margin: 15px 15px;
-    height: var(--bar-hieght);
+    height: var(--bar-height);
     width: 80%;
 	border: 3px solid white;
 	display: inline-flex;
@@ -95,11 +100,10 @@ body {
 }
 
 .candidate-photo {
-	max-height: var(--bar-hieght);
+	max-height: var(--bar-height);
 	width: auto;
 	background: var(--blue);
 	position: relative;
-	z-index: -1;
 }
 
 .candidate-name {
@@ -123,7 +127,7 @@ body {
 	font-size: 2.5vw;
 	font-weight: 700;
 	text-transform: uppercase;
-	padding: 0 3%;	
+	padding: 0 3%;
 }
 
 .candidate-votes {
@@ -133,7 +137,7 @@ body {
 	flex-direction: column;
 	align-items: flex-end;
 	justify-content: flex-end;
-	
+
 }
 
 .vote-percent{
@@ -147,7 +151,7 @@ body {
 	padding: 0 2%;
 	font-size: 2vw;
 	margin-right: 3%;
-	text-align: right;	
+	text-align: right;
 
 }
 
@@ -181,13 +185,13 @@ body {
     fill: black;
     cursor: pointer;
     transition: .6s;
-    
+
 } */
 
 /*-----------------------------------------------*/
 #controller{
 	background-color: var(--white);
-	font-size:1.5vw; 
+	font-size:1.5vw;
 	padding-left: 1%;
 }
 #buttons{
@@ -195,7 +199,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-}	
+}
 
 li{
 	width: 20%;

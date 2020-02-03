@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" initial-scale="1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/css/default.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,700i,900&display=swap&subset=latin-ext"
+        rel="stylesheet">
+
+    <title>Document</title>
+</head>
+
+<body id="map">
+    <div id="page">
+        <div id="info-header">
+            <!--<div id="state-name">
+            <h1>IOWA</h1>
+        </div>-->
+            <div id="subheader">
+                <h1 id="county-name-display">Pottawattamie</h1>
+                <h1 id="suffix">County</h1>
+            </div>
+
+        </div>
+        <div id="content">
+            <div id="info-box">
+                <div id="candidateOne" class="candidate-box">
+                    <img id="cOnePhoto" class="candidate-photo"
+                        src=""/>
+                    <div class="candidate-name">
+                        <h1 id="cOneFirstName" class="first-name">bloomberg</h1>
+                        <h1 id="cOneLastName" class="last-name">klobuchar</h1>
+                    </div>
+                    <div class="candidate-votes">
+                        <h1 id="cOneVotePercentage" class="vote-percent">95</h1>
+                        <div class="vote-bg">
+                            <h1 id="cOneTotalVotes" class="vote-total">555555555</h1>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="map-div" class="">
+                <svg id="iowa-map" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="16.093 45.259 467.814 309.482"
+                    enable-background="new 16.093 45.259 467.814 309.482" xml:space="preserve">
+
+                    <g class="county" data-contest="2796" data-name="Iowa - Adair">
+                        <path id="Adair" d="M185.765,245.598
+                                		l-0.141,34.322l-16.888-0.12l-16.917-0.163l0.276-34.285l33.668,0.268" />
+                    </g>
+                    <g class="county" data-contest="2797" data-name="Iowa - Adams">
+                        <path id="Adams" d="M168.737,279.787
+                                		l-0.158,25.588l-33.879-0.414l0.364-25.536l16.756,0.203l16.917,0.163" />
+                    </g>
+                    <g class="county" data-contest="2798" data-name="Iowa - Allamakee">
+                        <path id="Allamakee" d="M401.934,45.424
+                                		l1.065,7.626l-0.181,5.057l7.516,5.54l1.609,2.138l2.081,3.519l-0.302,1.222l-5.699,9.128l-2.031,7.215l-30.651,0.651l-0.532-25.74
+                                		l-0.519-0.012l-0.368-15.664l28.012-0.719" />
+                    </g>
+                    <g class="county" data-contest="2799" data-name="Iowa - Appanoose">
+                        <path id="Appanoose" d="M304.025,304.957
+                                		l0.517,30.556l-5.683,0.173l-28.435,0.856l-0.304-31.177l33.904-0.421" />
+                    </g>
+                    <g class="county" data-contest="2800" data-name="Iowa - Audubon">
+                        <path id="Audubon"
+                            d="M123.794,209.467
+                                		l25.378,0.352l-0.135,21.419l3.146,4.368l-0.087,9.717l-24.928-0.343l0.107-9.621l-3.822-0.085l0.341-25.858" />
+                    </g>
+                    <g class="county" data-contest="2801" data-name="Iowa - Benton">
+                        <path id="Benton" d="M360.798,165.29
+                                		l0.895,43.288l-34.037,0.546l-0.757-43.032l16.966-0.276L360.798,165.29" />
+                    </g>
+                    <g class="county" data-contest="2802" data-name="Iowa - Black Hawk">
+                        <path id="Black_Hawk"
+                            d="M341.986,131.709
+                                		l0.355,17.247l1.301,2.23l0.224,14.629l-16.966,0.276l-17.034,0.283l-1.773-25.545l-0.213-8.571L341.986,131.709" />
+                    </g>
+                    <g class="county" data-contest="2803" data-name="Iowa - Boone">
+                        <path id="Boone" d="M225.448,175.749
+                                		l0.099,34.233l-8.602,0.021l-25.394,0.02l0.049-34.319l16.921-0.007l16.928,0.078" />
+                    </g>
+                    <g class="county" data-contest="2804" data-name="Iowa - Bremer">
+                        <path id="Bremer" d="M307.532,106.072
+                                		l33.962-0.557l0.491,26.193l-34.107,0.549L307.532,106.072" />
+                    </g>
+                    <g class="county" data-contest="2805" data-name="Iowa - Buchanan">
+                        <path id="Buchanan" d="M376.222,130.816
+                                		l0.038,7.501l0.263,9.775l1.032,9.479l0.243,7.609l-17,0.108l-16.933,0.525l-0.224-14.629l-1.301-2.23l-0.355-17.247
+                                		L376.222,130.816" />
+                    </g>
+                    <g class="county" data-contest="2806" data-name="Iowa - Buena Vista">
+                        <path id="Buena_Vista" d="M137.971,106.067
+                                		l-0.428,34.555l-34.181-0.592l0.532-34.424L137.971,106.067" />
+                    </g>
+                    <g class="county" data-contest="2807" data-name="Iowa - Butler">
+                        <path id="Butler" d="M273.706,106.379
+                                		l33.826-0.307l0.347,26.185l0.213,8.571l-34.199,0.298L273.706,106.379" />
+                    </g>
+                    <g class="county" data-contest="2808" data-name="Iowa - Calhoun">
+                        <path id="Calhoun"
+                            d="M137.543,140.623
+                                		l34.085,0.418l-0.082,8.461l3.295,0.074l-0.133,26.145l-16.789-0.118l-16.681-0.158l0.378-26.166l-4.195-0.093l0.121-8.508" />
+                    </g>
+                    <g class="county" data-contest="2809" data-name="Iowa - Carroll">
+                        <path id="Carroll" d="M141.24,175.39
+                                		l16.681,0.158l-0.285,34.327l-8.463-0.061l-25.378-0.353l0.562-34.347l16.884,0.291" />
+                    </g>
+                    <g class="county" data-contest="2810" data-name="Iowa - Cass">
+                        <path id="Cass" d="M152.096,245.33
+                                		l-0.276,34.285l-16.756-0.203l-16.816-0.29l0.528-34.274l8.392,0.145l24.928,0.343" />
+                    </g>
+                    <g class="county" data-contest="2811" data-name="Iowa - Cedar">
+                        <path id="Cedar" d="M429.483,198.438
+                                		l0.545,17.277l0.432,17.25l-34.135,0.848l-0.879-34.517L429.483,198.438" />
+                    </g>
+                    <g class="county" data-contest="2812" data-name="Iowa - Cerro Gordo">
+                        <path id="Cerro_Gordo" d="M239.626,72.248
+                                		l33.848-0.238l0.043,4.231l0.189,30.138l-34.021,0.169L239.626,72.248" />
+                    </g>
+                    <g class="county" data-contest="2813" data-name="Iowa - Cherokee">
+                        <path id="Cherokee" d="M103.895,105.61
+                                		l-0.532,34.425l-25.543-0.442l-8.568-0.149l0.77-34.44l33.874,0.585" />
+                    </g>
+                    <g class="county" data-contest="2814" data-name="Iowa - Chickasaw">
+                        <path id="Chickasaw" d="M341.001,75.269
+                                		l0.186,12.877l0.307,17.37l-33.962,0.557l-0.432-30.221L341.001,75.269" />
+                    </g>
+                    <g class="county" data-contest="2815" data-name="Iowa - Clarke">
+                        <path id="Clarke" d="M236.031,279.525
+                                		l0.135,26.082l-33.852,0.148l0.063-25.736l16.59-0.524l17.064,0.038" />
+                    </g>
+                    <g class="county" data-contest="2816" data-name="Iowa - Clay">
+                        <path id="Clay" d="M104.443,71.469
+                                		l33.908,0.458l-0.381,34.158l-34.076-0.461l0.549-34.141" />
+                    </g>
+                    <g class="county" data-contest="2817" data-name="Iowa - Clayton">
+                        <path id="Clayton" d="M405.992,86.869
+                                		l1.316,9.388l1.441,7.558l6.243,14.729l0.852,1.877l5.72,3.98l1.977,0.969l3.764,0.983l-16.897,3.378l-34.186,1.086l-0.881-43.296
+                                		L405.992,86.869" />
+                    </g>
+
+                    <g class="county" data-contest="2818" data-name="Iowa - Clinton">
+                        <path id="Clinton"
+                            d="M429.234,189.763
+                                		l54.109-1.862l0.564,10.309l-6.004,14.579l-5.285,5.67l-9.898-3.152l-24.503,0.146l-8.188,0.262l-0.545-17.277L429.234,189.763" />
+                    </g>
+                    <g class="county" data-contest="2819" data-name="Iowa - Crawford">
+                        <path id="Crawford" d="M124.355,175.12
+                                		l-0.561,34.347l-33.868-0.543l-8.432-0.102l0.77-34.458l25.206,0.52l16.885,0.248" />
+                    </g>
+                    <g class="county" data-contest="2820" data-name="Iowa - Dallas">
+                        <path id="Dallas"
+                            d="M216.944,209.996
+                                		l0.134,21.741l1.72,4.341l0.049,8.734l-33.081,0.785l0.047-9.635l-2.852-0.064l0.09-25.91l8.502,0.019l25.394-0.02" />
+                    </g>
+                    <g class="county" data-contest="2821" data-name="Iowa - Davis">
+                        <path id="Davis" d="M338.055,304.372
+                                		l0.469,29.63l-12.667,0.544l-21.315,0.967l-0.517-30.556L338.055,304.372" />
+                    </g>
+                    <g class="county" data-contest="2822" data-name="Iowa - Decatur">
+                        <path id="Decatur" d="M202.313,305.756
+                                		l33.852-0.148l0.091,31.511l-16.142,0.304l-17.93,0.357L202.313,305.756" />
+                    </g>
+                    <g class="county" data-contest="2823" data-name="Iowa - Delaware">
+                        <path id="Delaware"
+                            d="M376.222,130.816
+                                		l34.186-1.086l1.221,34.596l-16.9,0.415l-16.931,0.44l-0.243-7.609l-1.032-9.479l-0.263-9.775L376.222,130.816" />
+                    </g>
+                    <g class="county" data-contest="2824" data-name="Iowa - Des Moines">
+                        <path id="Des_Moines" d="M428.444,284.997
+                                		l0.063,0.259l0.256,0.861l0.315,2.662l-0.476,8.003l-0.691,2.908l-0.426,0.608l-2.155,1.159l-0.81,0.761l-5.928,8.065l-0.303,1.265
+                                		l-0.76,11.127l-22.325-10.923l2.16-25.993l31.081-0.749" />
+                    </g>
+                    <g class="county" data-contest="2825" data-name="Iowa - Dickinson">
+                        <path id="Dickinson" d="M104.854,47.261
+                                		l33.664,0.452l-0.166,24.205l-33.908-0.457l0.41-24.208" />
+                    </g>
+                    <g class="county" data-contest="2826" data-name="Iowa - Dubuque">
+                        <path id="Dubuque" d="M410.408,129.73
+                                		l16.897-3.378l9.274,1.992l3.59,0.945l0.815,0.403l0.508,0.534l4.391,8.424l0.73,2.495l0.033,0.558l-0.285,0.469l-1.045,1.702
+                                		l-0.035,0.213l0.057,0.554l0.156,0.496l0.574,0.625l1.651,1.244l4.804,2.616l6.083,4.442l0.03,0.001l0.179,0.175l-13.771,0.412
+                                		l0.257,8.666l-16.878,0.488l-16.795,0.456l-1.219-34.596" />
+                    </g>
+                    <g class="county" data-contest="2827" data-name="Iowa - Emmet">
+                        <path id="Emmet" d="M172.156,47.967
+                                		l-0.167,24.252l-33.637-0.31l0.166-24.205l4.335,0.011l29.304,0.226" />
+                    </g>
+                    <g class="county" data-contest="2828" data-name="Iowa - Fayette">
+                        <path id="Fayette" d="M341.188,88.146
+                                		l34.153-0.625l0.881,43.296l-34.236,0.893l-0.491-26.193L341.188,88.146" />
+                    </g>
+                    <g class="county" data-contest="2829" data-name="Iowa - Floyd">
+                        <path id="Floyd" d="M273.517,76.241
+                                		l33.584-0.389l0.432,30.221l-33.826,0.307L273.517,76.241" />
+                    </g>
+                    <g class="county" data-contest="2830" data-name="Iowa - Franklin">
+                        <path id="Franklin" d="M239.685,106.548
+                                		l34.021-0.169l0.187,34.748l-34.128,0.138L239.685,106.548" />
+                    </g>
+                    <g class="county" data-contest="2831" data-name="Iowa - Fremont">
+                        <path id="Fremont"
+                            d="M68.581,303.828
+                                		l32.379,0.594l-0.19,13.349l0.615,11.093l-0.097,7.387l-29.081-0.948l-6.198-19.823l2.572-11.638" />
+                    </g>
+                    <g class="county" data-contest="2832" data-name="Iowa - Greene">
+                        <path id="Greene" d="M174.708,175.691
+                                		l16.892-0.008l-0.049,34.319l-8.502-0.018l-25.414-0.109l0.285-34.327l16.789,0.118" />
+                    </g>
+                    <g class="county" data-contest="2833" data-name="Iowa - Grundy">
+                        <path id="Grundy" d="M308.092,140.829
+                                		l1.773,25.545l-16.94,0.29l0.089,8.564l-16.957,0.238l-2.164-34.339L308.092,140.829" />
+                    </g>
+                    <g class="county" data-contest="2834" data-name="Iowa - Guthrie">
+                        <path id="Guthrie"
+                            d="M157.635,209.879
+                                		l25.414,0.109l-0.09,25.91l2.852,0.064l-0.047,9.635l-33.669-0.268l0.088-9.716l-3.146-4.368l0.135-21.419l8.463,0.061" />
+                    </g>
+                    <g class="county" data-contest="2835" data-name="Iowa - Hamilton">
+                        <path id="Hamilton"
+                            d="M239.765,141.265
+                                		l2.772,34.446l-17.09,0.047l-16.927-0.078l-0.002-25.896l-2.892-0.064l0.021-8.497l34.117,0.008" />
+                    </g>
+                    <g class="county" data-contest="2836" data-name="Iowa - Hancock">
+                        <path id="Hancock" d="M239.626,72.248
+                                		l0.059,34.3l-33.998,0.136l0.119-34.365L239.626,72.248" />
+                    </g>
+                    <g class="county" data-contest="2837" data-name="Iowa - Hardin">
+                        <path id="Hardin" d="M273.893,141.127
+                                		l2.164,34.339l-16.727,0.183l-16.793,0.062l-2.772-34.446L273.893,141.127" />
+                    </g>
+                    <g class="county" data-contest="2838" data-name="Iowa - Harrison">
+                        <path id="Harrison"
+                            d="M89.926,208.916
+                                		l-0.548,25.892l4.402,0.099l-0.175,9.529l-35.412-0.79l-9.864-17.622l-0.899-18.185l34.064,1.017l8.432,0.104" />
+                    </g>
+                    <g class="county" data-contest="2839" data-name="Iowa - Henry">
+                        <path id="Henry"
+                            d="M388.646,277.225
+                                		l8.717,8.521l-2.159,25.993l-22.916,0.486l-0.158-8.673l-0.42-25.943L388.646,277.225" />
+                    </g>
+                    <g class="county" data-contest="2840" data-name="Iowa - Howard">
+                        <path id="Howard" d="M314.248,47.324
+                                		l26.25-0.484l0.503,28.429l-33.9,0.583l-0.29-28.419l7.437-0.091" />
+                    </g>
+                    <g class="county" data-contest="2841" data-name="Iowa - Humboldt">
+                        <path id="Humboldt" d="M171.811,106.515
+                                		l33.876,0.169l-0.022,26.002l-34.022-0.139L171.811,106.515" />
+                    </g>
+                    <g class="county" data-contest="2842" data-name="Iowa - Ida">
+                        <path id="Ida"
+                            d="M103.363,140.035
+                                		l-0.123,8.602l4.707,0.105l-0.477,26.146l-25.206-0.52l0.581-26.058l-2.364-0.053l-2.792-1.462l0.13-7.155l25.544,0.441" />
+                    </g>
+                    <g class="county" data-contest="2843" data-name="Iowa - Iowa">
+                        <path id="Iowa" d="M327.657,209.123
+                                		l34.037-0.546l0.906,34.658l-8.531,0.268l-25.773,0.593L327.657,209.123" />
+                    </g>
+                    <g class="county" data-contest="2844" data-name="Iowa - Jackson">
+                        <path id="Jackson"
+                            d="M458.815,154.305
+                                		l4.213,5.107l0.199,0.304l0.03,0.386l-0.474,2.772l-0.434,0.915l-0.014,0.625l0.957,2.29l0.051,0.129l2.01,2.622l0.067,0.044
+                                		l1.221,1.024l1.315,0.895l3.008,1.034l12.379,15.436l-54.11,1.862l-0.811-25.893l16.879-0.488l-0.257-8.666l13.771-0.412" />
+                    </g>
+                    <g class="county" data-contest="2845" data-name="Iowa - Jasper">
+                        <path id="Jasper" d="M259.558,209.915
+                                		l33.955-0.269l1.119,35.005l-8.398,0.112l-33.545,0.355l-1.588-35.203l8.457-0.025" />
+                    </g>
+                    <g class="county" data-contest="2846" data-name="Iowa - Jefferson">
+                        <path id="Jefferson" d="M371.709,277.609
+                                		l0.42,25.943l-34.074,0.819l-0.518-26.053l17.236-0.441L371.709,277.609" />
+                    </g>
+                    <g class="county" data-contest="2847" data-name="Iowa - Johnson">
+                        <path id="Johnson"
+                            d="M395.657,207.932
+                                		l0.667,25.881l0.299,17.349l-8.468,0.153l-1.74-6.816l-1.167-1.743l-22.648,0.479l-0.906-34.658L395.657,207.932" />
+                    </g>
+                    <g class="county" data-contest="2848" data-name="Iowa - Jones">
+                        <path id="Jones"
+                            d="M411.629,164.326
+                                		l16.793-0.455l0.811,25.892l0.249,8.674l-34.037,0.858l-0.717-34.555L411.629,164.326" />
+                    </g>
+                    <g class="county" data-contest="2849" data-name="Iowa - Keokuk">
+                        <path id="Keokuk"
+                            d="M328.295,244.096
+                                		l25.773-0.593l0.705,34.375l-17.236,0.441l-16.967,0.353l-0.682-34.421L328.295,244.096" />
+                    </g>
+                    <g class="county" data-contest="2850" data-name="Iowa - Kossuth">
+                        <path id="Kossuth"
+                            d="M205.795,48.17
+                                		l0.011,24.149l-0.119,34.365l-33.876-0.169l0.178-34.295l0.167-24.252l13.934,0.097l19.704,0.14" />
+                    </g>
+                    <g class="county" data-contest="2851" data-name="Iowa - Lee">
+                        <path id="Lee"
+                            d="M372.287,312.226
+                                		l22.916-0.486l22.324,10.923l-5.299,5.943l-2.404-0.011l-1.964,0.085l-0.587-0.014l-0.03-0.001l-3.921,1.278l-0.109,0.083
+                                		l-0.447,0.247l-1.886,1.02l-0.665,0.413l-0.235,0.252l-0.28,0.251l-0.281,0.293l-3.234,4.735l-0.131,0.729l0.226,0.826l1.502,0.753
+                                		l1.196,1.82l0.385,1.208l0.039,0.994l-0.395,8.844l-0.031,0.042l-0.194,0.86l-0.801,0.637l-0.107,0.041l-2.291,0.749l-4.867-0.45
+                                		l-3.049-2.577l-7.286-9.384l-0.26-0.691l0.289-1.992l-0.161-0.654l-5.782-4.572l-1.526-1.002l-0.648-21.266" />
+                    </g>
+                    <g class="county" data-contest="2852" data-name="Iowa - Linn">
+                        <path id="Linn" d="M394.729,164.741
+                                		l0.717,34.555l0.212,8.636l-33.964,0.646l-0.895-43.288l17-0.108L394.729,164.741" />
+                    </g>
+                    <g class="county" data-contest="2853" data-name="Iowa - Louisa">
+                        <path id="Louisa" d="M388.156,251.314
+                                		l8.468-0.153l0.182,8.639l21.264-0.352l0,0l-2.285,8.353l0.059,0.818l0.027,0.087l4.848,6.097l2.324,1.221l0.986-0.106l0.59,0.271
+                                		l0.611,0.664l3.336,5.751l-0.121,2.374l-31.08,0.748l-8.717-8.521l-0.49-25.911" />
+                    </g>
+                    <g class="county" data-contest="2854" data-name="Iowa - Lucas">
+                        <path id="Lucas" d="M252.945,279.492
+                                		l16.87-0.103l0.305,25.988l-33.954,0.23l-0.135-26.082l16.914-0.051" />
+                    </g>
+                    <g class="county" data-contest="2855" data-name="Iowa - Lyon">
+                        <path id="Lyon" display="none"
+                            d="
+                                		M18.59,45.301l10.373,0.317l28.498,0.722l13.655,0.305l-0.572,23.926l-51.256-1.529L18.59,45.259" />
+                    </g>
+                    <g class="county" data-contest="2856" data-name="Iowa - Madison">
+                        <path id="Madison" d="M218.846,244.813
+                                		l0.119,34.683l-16.59,0.524l-16.75-0.117l0.14-34.321l33.081-0.786" />
+                    </g>
+                    <g class="county" data-contest="2857" data-name="Iowa - Mahaska">
+                        <path id="Mahaska" d="M294.632,244.65
+                                		l25.257-0.399l0.682,34.421l-16.974,0.31l-16.888,0.232l-0.476-34.438l8.398-0.112" />
+                    </g>
+                    <g class="county" data-contest="2858" data-name="Iowa - Marion">
+                        <path id="Marion" d="M286.234,244.775
+                                		l0.476,34.438l-16.895,0.175l-16.87,0.103l-0.23-32.781l-0.025-1.58L286.234,244.775" />
+                    </g>
+                    <g class="county" data-contest="2859" data-name="Iowa - Marshall">
+                        <path id="Marshall" d="M276.057,175.466
+                                		l16.957-0.238l0.499,34.417l-33.955,0.269l-0.227-34.266L276.057,175.466" />
+                    </g>
+                    <g class="county" data-contest="2860" data-name="Iowa - Mills">
+                        <path id="Mills" d="M101.499,278.898
+                                		l-0.539,25.516l-32.379-0.595l-2.952-14.441l1.25-11.184l34.62,0.687" />
+                    </g>
+                    <g class="county" data-contest="2861" data-name="Iowa - Mitchell">
+                        <path id="Mitchell" d="M306.811,47.432
+                                		l0.29,28.419l-33.584,0.389l-0.29-28.36L306.811,47.432" />
+                    </g>
+                    <g class="county" data-contest="2862" data-name="Iowa - Monona">
+                        <path id="Monona" d="M82.264,174.338
+                                		l-0.769,34.458l-34.064-1.017l-9.266-18.166l-5.647-16.774l49.746,1.495" />
+                    </g>
+                    <g class="county" data-contest="2863" data-name="Iowa - Monroe">
+                        <path id="Monroe" d="M303.597,278.982
+                                		l0.428,25.975l-33.905,0.42l-0.305-25.988l16.895-0.175L303.597,278.982" />
+                    </g>
+                    <g class="county" data-contest="2864" data-name="Iowa - Montgomery">
+                        <path id="Montgomery" d="M118.247,279.135
+                                		l16.815,0.29l-0.363,25.536l-33.739-0.539l0.54-25.515l16.747,0.245" />
+                    </g>
+                    <g class="county" data-contest="2865" data-name="Iowa - Muscatine">
+                        <path id="Muscatine" d="M430.459,232.965
+                                		l8.809,14.02l-4.501-0.101l-10.377,2.585l-2.784,0.936l-0.797,0.496l-0.068-0.002l0,0l-0.535,0.721l-0.073,0.212l-1.116,4.179
+                                		l-0.944,3.353l-21.265,0.348l-0.182-8.635l-0.299-17.349l34.136-0.848" />
+                    </g>
+                    <g class="county" data-contest="2866" data-name="Iowa - O Brien">
+                        <path id="O'Brien" d="M70.543,70.61
+                                		l33.9,0.842l-0.549,34.142l-33.875-0.585l0.524-34.429" />
+                    </g>
+                    <g class="county" data-contest="2867" data-name="Iowa - Osceola">
+                        <path id="Osceola" d="M100.109,47.155
+                                		l4.745,0.105l-0.411,24.208l-33.899-0.842L71.115,46.7l28.993,0.477" />
+                    </g>
+                    <g class="county" data-contest="2868" data-name="Iowa - Page">
+                        <path id="Page"
+                            d="M134.699,304.953
+                                		l-0.17,17.171l1.129,0.025l-0.269,15.098l-21.38-0.607l-12.723-0.369l0.097-7.387l-0.615-11.093l0.191-13.349l33.738,0.539" />
+                    </g>
+                    <g class="county" data-contest="2869" data-name="Iowa - Palo Alto">
+                        <path id="Palo_Alto" d="M171.989,72.219
+                                		l-0.178,34.295l-33.84-0.456l0.381-34.158l33.637,0.31" />
+                    </g>
+                    <g class="county" data-contest="2870" data-name="Iowa - Plymouth">
+                        <path id="Plymouth"
+                            d="M70.02,105.039
+                                		l-0.77,34.44l-44.732-1.084l-2.455-6.93l-1.795-3.032l-2.323-2.257l-1.851-1.484l3.178-13.131l3.063-7.642l47.685,1.149" />
+                    </g>
+                    <g class="county" data-contest="2871" data-name="Iowa - Pocahontas">
+                        <path id="Pocahontas" d="M137.971,106.067
+                                		l33.84,0.456l-0.169,26.033l-0.015,8.493l-34.084-0.418l0.428-34.555" />
+                    </g>
+                    <g class="county" data-contest="2872" data-name="Iowa - Polk">
+                        <path id="Polk"
+                            d="M251.101,209.928
+                                		l1.588,35.203l0.025,1.58l-33.868-1.898l-0.05-8.734l-1.719-4.341l-0.134-21.741l8.602-0.022l25.555-0.055" />
+                    </g>
+                    <g class="county" data-contest="2873" data-name="Iowa - Pottawattamie">
+                        <path id="Pottawattamie"
+                            d="M93.607,244.398
+                                		l25.169,0.475l-0.528,34.275l-16.747-0.246l-34.621-0.687l-5.088-3.214l-0.651-20.036l-2.945-11.347l35.412,0.791" />
+                    </g>
+                    <g class="county" data-contest="2874" data-name="Iowa - Poweshiek">
+                        <path id="Poweshiek" d="M293.513,209.646
+                                		l34.144-0.523l0.639,34.973l-8.406,0.155l-25.257,0.399L293.513,209.646" />
+                    </g>
+                    <g class="county" data-contest="2875" data-name="Iowa - Ringgold">
+                        <path id="Ringgold" d="M168.578,305.375
+                                		l33.734,0.368l-0.127,32.022l-16.1,0.142l-17.753,0.032l0.246-32.568" />
+                    </g>
+                    <g class="county" data-contest="2876" data-name="Iowa - Sac">
+                        <path id="Sac"
+                            d="M103.363,140.035
+                                		l34.181,0.592l-0.121,8.508l4.195,0.094l-0.378,26.165l-16.884-0.291l-16.886-0.248l0.477-26.146l-4.706-0.106l0.123-8.601" />
+                    </g>
+                    <g class="county" data-contest="2877" data-name="Iowa - Scott">
+                        <path id="Scott" d="M430.028,215.715
+                		l8.188-0.262l24.503-0.146l9.898,3.152l-1.377,10.693l-3.928,5.041l-4.478,4.99l-14.046,6.57l-5.953,1.379l-2.512,0.029
+                		l-1.058-0.152l-8.808-14.02l-0.432-17.25" />
+                    </g>
+                    <g class="county" data-contest="2878" data-name="Iowa - Shelby">
+                        <path id="Shelby"
+                            d="M89.926,208.916
+                                		l33.868,0.542l-0.34,25.857l3.822,0.086l-0.108,9.621l-8.393-0.145l-25.168-0.477l0.174-9.529l-4.401-0.099l0.548-25.892" />
+                    </g>
+                    <g class="county" data-contest="2879" data-name="Iowa - Sioux">
+                        <path id="Sioux" d="M19.287,69.085
+                                		l51.256,1.529l-0.523,34.429l-47.685-1.15L27.7,86.808l1.204-3.004l0.221-0.672l-2.533-9.963l-0.671-0.357l-5.126-0.114
+                                		L19.287,69.085" />
+                    </g>
+                    <g class="county" data-contest="2880" data-name="Iowa - Story">
+                        <path id="Story" d="M259.33,175.649
+                                		l0.227,34.266l-8.457,0.025l-25.555,0.055l-0.099-34.233l17.09-0.046l16.793-0.063" />
+                    </g>
+                    <g class="county" data-contest="2881" data-name="Iowa - Tama">
+                        <path id="Tama" d="M326.9,166.091
+                                		l0.757,43.032l-34.144,0.523l-0.616-42.986L326.9,166.091" />
+                    </g>
+                    <g class="county" data-contest="2882" data-name="Iowa - Taylor">
+                        <path id="Taylor"
+                            d="M168.578,305.375
+                                		l-0.247,32.568l-11.926-0.138l-21.015-0.555l0.268-15.097l-1.129-0.025l0.17-17.172l33.879,0.414" />
+                    </g>
+                    <g class="county" data-contest="2883" data-name="Iowa - Union">
+                        <path id="Union" d="M185.624,279.92
+                                		l16.751,0.117l-0.064,25.735l-33.734-0.367l0.159-25.589l16.888,0.121" />
+                    </g>
+                    <g class="county" data-contest="2884" data-name="Iowa - Van Buren">
+                        <path id="Van_Buren" d="M338.055,304.372
+                                		l34.074-0.819l0.158,8.673l0.646,21.265l-16.845-0.333l-17.565,0.841l-0.469-29.631" />
+                    </g>
+                    <g class="county" data-contest="2885" data-name="Iowa - Wapello">
+                        <path id="Wapello" d="M320.571,278.672
+                                		l16.967-0.353l0.518,26.053l-34.03,0.585l-0.428-25.975L320.571,278.672" />
+                    </g>
+                    <g class="county" data-contest="2886" data-name="Iowa - Warren">
+                        <path id="Warren" d="M252.714,246.711
+                                		l0.23,32.781l-16.915,0.051l-17.065-0.039l-0.118-34.683l33.868,1.898" />
+                    </g>
+                    <g class="county" data-contest="2887" data-name="Iowa - Washington">
+                        <path id="Washington"
+                            d="M362.6,243.235
+                                		l22.648-0.479l1.167,1.743l1.74,6.816l0.49,25.91l-16.936,0.385l-16.936,0.268l-0.705-34.375L362.6,243.235" />
+                    </g>
+                    <g class="county" data-contest="2888" data-name="Iowa - Wayne">
+                        <path id="Wayne" d="M270.119,305.377
+                                		l0.305,31.177l-20.581,0.495l-13.587,0.082l-0.091-31.51l33.954-0.232" />
+                    </g>
+                    <g class="county" data-contest="2889" data-name="Iowa - Webster">
+                        <path id="Webster" d="M205.664,132.686
+                                		l-0.038,17.067l2.892,0.064l0.002,25.895l-16.921,0.008l-16.892,0.008l0.134-26.145l-3.296-0.074l0.082-8.461l0.014-8.493
+                                		l34.023,0.139" />
+                    </g>
+                    <g class="county" data-contest="2890" data-name="Iowa - Winnebago">
+                        <path id="Winnebago" d="M239.546,48.127
+                                		l0.08,24.121l-33.82,0.071l-0.011-24.149l22.943-0.006l10.808-0.016" />
+                    </g>
+                    <g class="county" data-contest="2891" data-name="Iowa - Winneshiek">
+                        <path id="Winneshiek"
+                            d="M373.921,46.144
+                                		l0.368,15.663l0.518,0.012l0.532,25.741l-34.154,0.625L341,75.307l-0.502-28.428l24.923-0.505l8.499-0.195" />
+                    </g>
+                    <g class="county" data-contest="2892" data-name="Iowa - Woodbury">
+                        <path id="Woodbury"
+                            d="M69.25,139.479
+                                		l8.568,0.148l-0.13,7.155l2.791,1.462l2.365,0.053l-0.582,26.058l-49.745-1.496l1.036-6.064l-2.112-4.178l-0.602-11.341
+                                		l0.541-1.354l0.004-1.52l-0.279-1.141l-0.739-1.078l-0.952-0.407l-2.469-0.226l-2.427-7.186l44.732,1.084" />
+                    </g>
+                    <g class="county" data-contest="2893" data-name="Iowa - Worth">
+                        <path id="Worth" d="M273.227,47.881
+                                		l0.247,24.129l-33.848,0.238l-0.08-24.121l31.924-0.208l1.757-0.046" />
+                    </g>
+                    <g class="county" data-contest="2894" data-name="Iowa - Wright">
+                        <path id="Wright" d="M205.687,106.684
+                                		l33.998-0.136l0.08,34.716l-34.116-0.008l0.016-8.57l0.023-26.002" />
+                    </g>
+
+                </svg>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="/js/map.js"></script>
+</body>
+
+</html>
