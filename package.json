@@ -1,0 +1,17 @@
+{
+  "name": "election_map_2020",
+  "version": "1.0.0",
+  "description": "Display county-by-county election results for the democratic primary",
+  "main": "index.js",
+  "repository": "git@github.com:artjafri/election_map_2020.git",
+  "author": "Ali Jafri <ali.jafri@cheddar.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "ws": "^7.2.1"
+  }
+}
