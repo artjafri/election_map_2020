@@ -18,7 +18,7 @@ body {
 }
 
 body#map {
-  width: 1920px;
+  	width: 1920px;
 	height: 1080px;
 }
 
@@ -118,13 +118,13 @@ body#map {
 }
 
 .first-name{
-	font-size: 2vw;
+	font-size: 1.5vw;
 	font-weight: 300;
 	padding: 3% 3%;
 }
 
 .last-name{
-	font-size: 2.5vw;
+	font-size: 2vw;
 	font-weight: 700;
 	text-transform: uppercase;
 	padding: 0 3%;
@@ -141,7 +141,7 @@ body#map {
 }
 
 .vote-percent{
-	font-size: 3vw;
+	font-size: 1.5vw;
 	padding:5% 2%;
 }
 
