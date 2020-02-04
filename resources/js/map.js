@@ -13,7 +13,7 @@ $(document).ready(function () {
     })
 
     var photoURL = "/images/candidate_portraits/";
-    var url = "http://10.18.55.37/tickit/blade/election/event/30/Final-Alignment-Take-2/?format=jsonp&callback=?&pretty=yes";
+    var url = "http://10.18.55.37/tickit/blade/election/event/28/IA-COUNTY-RESULTS/?format=jsonp&callback=?&pretty=yes";
     
     var countyNameDisplay = $('#county-name-display');
     var suffix = $('#suffix');
@@ -38,7 +38,7 @@ $(document).ready(function () {
             if (countyName == "Iowa") {
               updatedCountyName = "Iowa";
               suffix.text(" Statewide");
-            } else { suffix.text(" County") };
+            } else {suffix.text(" County")};
             //UPDATE HEADER
             countyNameDisplay.text(updatedCountyName);
 
