@@ -64,6 +64,7 @@ svg{
 	flex-direction: column;
 	align-items: baseline;
 	padding: 1.2%;
+	padding-left: 8%;
 	background-color: var(--black);
 }
 

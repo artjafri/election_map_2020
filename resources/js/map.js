@@ -13,7 +13,7 @@ $(document).ready(function () {
     })
 
     var photoURL = "/images/candidate_portraits/";
-    var url = "http://10.18.55.37/tickit/blade/election/event/31/Test-NH-2/?format=jsonp&callback=?&pretty=yes";
+    var url = "http://10.18.55.37/tickit/blade/election/event/35/NH-Primary-County/?format=jsonp&callback=?&pretty=yes";
     
     var countyNameDisplay = $('#county-name-display');
     var suffix = $('#suffix');
