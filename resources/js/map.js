@@ -33,10 +33,10 @@ $(document).ready(function () {
           if (contestCounty.id == selectedCounty) {
             //HEADER
             var countyName = contestCounty.area.name;
-            var updatedCountyName = countyName.substring(7, countyName.length);
+            var updatedCountyName = countyName.substring(15, countyName.length);
 
-            if (countyName == "Iowa") {
-              updatedCountyName = "Iowa";
+            if (countyName == "New Hampshire") {
+              updatedCountyName = "New Hampshire";
               suffix.text(" Statewide");
             } else {suffix.text(" County")};
             //UPDATE HEADER
@@ -75,36 +75,36 @@ $(document).ready(function () {
             c2Photo.attr('src', photoURL + c2.headShot.media.fileName);
 
             // CANDIDATE Three
-            var c3 = contestCounty.choice[2];
-            var c3Fname = $('#cThreeFirstName');
-            var c3Lname = $('#cThreeLastName');
-            var c3VotePercentage = $('#cThreeVotePercentage');
-            var c3TotalVotes = $('#cThreeTotalVotes');
-            var c3Photo = $('#cThreePhoto');
-            var c3PhotoSrc = $(c3Photo).attr('src');
+             var c3 = contestCounty.choice[2];
+             var c3Fname = $('#cThreeFirstName');
+             var c3Lname = $('#cThreeLastName');
+             var c3VotePercentage = $('#cThreeVotePercentage');
+             var c3TotalVotes = $('#cThreeTotalVotes');
+             var c3Photo = $('#cThreePhoto');
+             var c3PhotoSrc = $(c3Photo).attr('src');
 
-            //UPDATE CANDIDATE TWO
-            c3Fname.text(c3.firstName);
-            c3Lname.text(c3.lastName);
-            c3VotePercentage.text(c3.votes.votePercent + "%");
-            c3TotalVotes.text(c3.votes.total);
-            c3Photo.attr('src', photoURL + c3.headShot.media.fileName);
+            // //UPDATE CANDIDATE TWO
+             c3Fname.text(c3.firstName);
+             c3Lname.text(c3.lastName);
+             c3VotePercentage.text(c3.votes.votePercent + "%");
+             c3TotalVotes.text(c3.votes.total);
+             c3Photo.attr('src', photoURL + c3.headShot.media.fileName);
 
-            // CANDIDATE Three
-            var c4 = contestCounty.choice[3];
-            var c4Fname = $('#cFourFirstName');
-            var c4Lname = $('#cFourLastName');
-            var c4VotePercentage = $('#cFourVotePercentage');
-            var c4TotalVotes = $('#cFourTotalVotes');
-            var c4Photo = $('#cFourPhoto');
-            var c4PhotoSrc = $(c4Photo).attr('src');
+            // // CANDIDATE Three
+             var c4 = contestCounty.choice[3];
+             var c4Fname = $('#cFourFirstName');
+             var c4Lname = $('#cFourLastName');
+             var c4VotePercentage = $('#cFourVotePercentage');
+             var c4TotalVotes = $('#cFourTotalVotes');
+             var c4Photo = $('#cFourPhoto');
+             var c4PhotoSrc = $(c4Photo).attr('src');
 
-            //UPDATE CANDIDATE TWO
-            c4Fname.text(c4.firstName);
-            c4Lname.text(c4.lastName);
-            c4VotePercentage.text(c4.votes.votePercent + "%");
-            c4TotalVotes.text(c4.votes.total);
-            c4Photo.attr('src', photoURL + c4.headShot.media.fileName);
+            // //UPDATE CANDIDATE TWO
+             c4Fname.text(c4.firstName);
+             c4Lname.text(c4.lastName);
+             c4VotePercentage.text(c4.votes.votePercent + "%");
+             c4TotalVotes.text(c4.votes.total);
+             c4Photo.attr('src', photoURL + c4.headShot.media.fileName);
 
 
 
