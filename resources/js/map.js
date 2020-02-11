@@ -50,9 +50,9 @@ $(document).ready(function () {
             var c1TotalVotes = $('#cOneTotalVotes');
             var c1Photo = $('#cOnePhoto');
             var c1PhotoSrc = $(c1Photo).attr('src');
-            if (c1.lastName == "Total Write-ins") {
-              c1.lastName == "Write-ins"
-            }
+            // if (c1.lastName == "Total Write-ins") {
+            //   c1.lastName == "Write-ins"
+            // }
 
             //UPDATE CANDIDATE ONE
             c1Fname.text(c1.firstName);
@@ -69,9 +69,9 @@ $(document).ready(function () {
             var c2TotalVotes = $('#cTwoTotalVotes');
             var c2Photo = $('#cTwoPhoto');
             var c2PhotoSrc = $(c2Photo).attr('src');
-            if (c2.lastName == "Total Write-ins") {
-              c2.lastName == "Write-ins"
-            }
+            // if (c2.lastName == "Total Write-ins") {
+            //   c2.lastName == "Write-ins"
+            // }
 
             //UPDATE CANDIDATE Three
             c2Fname.text(c2.firstName);
@@ -88,9 +88,9 @@ $(document).ready(function () {
              var c3TotalVotes = $('#cThreeTotalVotes');
              var c3Photo = $('#cThreePhoto');
             var c3PhotoSrc = $(c3Photo).attr('src');
-            if (c3.lastName == "Total Write-ins") {
-              c3.lastName == "Write-ins"
-            }
+            // if (c3.lastName == "Total Write-ins") {
+            //   c3.lastName == "Write-ins"
+            // }
 
             // //UPDATE CANDIDATE TWO
              c3Fname.text(c3.firstName);
@@ -107,16 +107,19 @@ $(document).ready(function () {
              var c4TotalVotes = $('#cFourTotalVotes');
              var c4Photo = $('#cFourPhoto');
             var c4PhotoSrc = $(c4Photo).attr('src');
-            if (c4.lastName == "Total Write-ins") {
-              c4.lastName == "Write-ins"
-            }
+            var c4LnameContent = c4.lastName;
+            // if (c4.lastName == "Total Write-ins") {
+            //   c4LnameContent == "Write-ins"
+            //   console.log("this should work: " + c4LnameContent)
+            // }
 
             // //UPDATE CANDIDATE TWO
              c4Fname.text(c4.firstName);
-             c4Lname.text(c4.lastName);
+             c4Lname.text(c4LnameContent);
              c4VotePercentage.text(c4.votes.votePercent + "%");
              c4TotalVotes.text(c4.votes.total);
-             c4Photo.attr('src', photoURL + c4.headShot.media.fileName);
+            c4Photo.attr('src', photoURL + c4.headShot.media.fileName);
+            
 
             
 
