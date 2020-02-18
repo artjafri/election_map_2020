@@ -1,0 +1,61 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  max-width: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#controller {
+  background-color: #ea2530;
+  padding-left: 1%;
+}
+
+main {
+  -webkit-transition: margin-left .5s;
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+.sideNav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+  padding-top: 60px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sideNav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.sideNav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#page {
+  width: 1920px;
+  height: 1200px;
+  background: #ffffff;
+}
+/*# sourceMappingURL=control.css.map */

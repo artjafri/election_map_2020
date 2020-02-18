@@ -17,6 +17,18 @@ $(document).ready(function () {
     });
   });
 
+  $('#menuSelector').click(function () {
+    $('#mySideNav').css('width', '250px');
+    $('main').css('margin-left', '250px');
+    
+    
+  });
+
+  $('.navItem').click(function () {
+    
+    console.log("text changed");
+});
+  
   $('li').click(function () {
     var selectedCounty = $(this).data('contest');
     var counties = $("[class|= 'county']");

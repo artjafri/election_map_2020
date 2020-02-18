@@ -1,15 +1,9 @@
-:root {
-	--white: #ffffff;
-	--off-white: #d7d7d7;
-	--light-gray: #cccccc;
-	--gray: #636363;
-	--light-blue: #00aeef;
-	--blue: #003471;
-	--red: #ea2530;
-	--maroon: #9e0b0f;
-	--black: #000000;
-	--secondary: #aaaaaa;
-	--bar-height: 100px;
+@import "./variables";
+
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
 }
 
 body {
@@ -22,11 +16,6 @@ body#map {
 	height: 1080px;
 }
 
-* {
-	padding: 0px;
-	margin: 0px;
-}
-
 #page{
 	width: 1920px;
 	height: 1200px;
@@ -37,15 +26,14 @@ svg{
 	width: 110%;
 }
 
-/* SIDEBAR-------------------------------------------------------------------------------------- */
 
 #content{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	padding-top: 2.3%;
-;
 }
+
 #map-div {
 	width: 23%;
 	height: 190%;
@@ -66,7 +54,7 @@ svg{
     flex-direction: column;
     align-items: baseline;
     padding: 2%;
-    background-color: var(--black);
+    background-color: $black;
 }
 
 #subheader{
@@ -77,11 +65,11 @@ svg{
 #state-name{
     font-size: 20px;
     font-weight: 100;
-	color: var(--white);
+	color: $white;
 }
 
 #county-name-display {
-	color: var(--white);
+	color: $white;
 	transition: 1s;
 	font-size: 70px;
 	font-weight: 500;
@@ -90,7 +78,7 @@ svg{
 }
 
 #suffix {
-    color: var(--secondary);
+    color:$secondary;
     font-size: 70px;
     font-weight: 300;
     padding-left: 3%;
@@ -98,12 +86,12 @@ svg{
 }
 
 .candidate-box {
-	fill: white;
+	fill: $white;
 	padding: 0;
 	margin: 20px 40px;
 	height: 110px;
 	width: 70%;
-	border: 3px solid white;
+	border: 3px solid $white;
 	display: inline-flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -112,7 +100,7 @@ svg{
 .candidate-photo {
 	height: 110px;
 	width: 110px;
-	background: var(--blue);
+	background: $blue;
 	position: relative;
 }
 
@@ -120,11 +108,10 @@ svg{
 	font-weight: 300;
 	width: 40%;
 	margin-left: -10%;
-	color: var(--white) !important;
+	color: $white !important;
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
-	justify-content: ;
 }
 
 .first-name{
@@ -142,7 +129,7 @@ svg{
 
 .candidate-votes {
 	width: 30%;
-	color: var(--white);
+	color:$white;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -156,7 +143,7 @@ svg{
 }
 
 .vote-total{
-	color: var(--black) !important;
+	color: $black !important;
 	align-self: flex-end;
 	padding: 0 2%;
 	font-size: 2vw;
@@ -167,21 +154,19 @@ svg{
 
 .vote-bg{
 	width: 100%;
-	background-color: var(--white);
+	background-color: $white;
 
 }
 
 
-/* MAP------------------------------------------------------------------------------------------- */
-
 .selected {
-	fill: white !important;
+	fill:$white !important;
 	transition-duration: 1s;
 }
 
 .county {
 	fill: rgba(255, 255, 255, 0.100);
-	stroke: white;
+	stroke:$white;
 	stroke-width: 1px;
 	stroke-linejoin: round;
 }
@@ -190,20 +175,6 @@ svg{
 	display: none;
 }
 
-/* path:hover, circle:hover {
-    stroke: rgb(44, 44, 218);
-    fill: black;
-    cursor: pointer;
-    transition: .6s;
-
-} */
-
-/*-----------------------------------------------*/
-#controller{
-	background-color: var(--white);
-	font-size:1.5vw;
-	padding-left: 1%;
-}
 #buttons{
 	height:900px;
 	display: flex;
@@ -212,16 +183,14 @@ svg{
 }
 
 li{
-	width: 20%;
 	padding: .5%;
 	line-height: 1.5vw;
-	float: left;
 	display: inline;
 
 }
 
 .active-county{
-	background-color: var(--light-blue) !important;
-	color: var(--white) !important;
+	background-color: $light-blue !important;
+	color: $white !important;
 }
 

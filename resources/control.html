@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" initial-scale="1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="/css/default.css">
+    <base href="/">
+
+    <link rel="stylesheet" type="text/css" href="/styles/control.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,700i,900&display=swap&subset=latin-ext"
         rel="stylesheet">
@@ -13,46 +15,50 @@
     <title>Document</title>
 </head>
 
-<body id="controls">
-    <div id="page">
-        <div id="controller">
-            <nav>
-                <h1>STATES</h1>
-                <ul class="main">
-                    <li><a href="#">Alabama</a></li>
-                    <li><a href="#">Arkansas</a></li>
-                    <li><a href="#">California</a></li>
-                    <li><a href="#">Colorado</a></li>
-                    <li><a href="#">Maine</a></li>
-                    <li><a href="#">Massachusetts</a></li>
-                    <li><a href="#">Minnesota</a></li>
-                    <li><a href="#">N. Carolina</a></li>
-                    <li><a href="#">Oklahoma</a></li>
-                    <li><a href="#">Tennessee</a></li>
-                    <li><a href="#">Texas</a></li>
-                    <li><a href="#">Utah</a></li>
-                    <li><a href="#">Vermont</a></li>
-                    <li><a href="#">Virginia</a></li>
-                    <li><a href="#">Alabama</a></li>
-                </ul>
-            </nav>
-            
-            <ul id="buttons">
-                <li data-contest="3447">NEW HAMPSHIRE</li>
-                <li data-contest="3453">Belknap</li>
-                <li data-contest="3449">Carroll</li>
-                <li data-contest="3452">Cheshire</li>
-                <li data-contest="3457">Coös</li>
-                <li data-contest="3450">Grafton</li>
-                <li data-contest="3454">Hillsborough</li>
-                <li data-contest="3451">Merrimack</li>
-                <li data-contest="3455">Rockingham</li>
-                <li data-contest="3456">Strafford</li>
-                <li data-contest="3448">Sullivan</li>
-            </ul>
+<body>
+    
+    <span id="menuSelector">open</span>
 
-        </div>
+    <div id="mySideNav" class="sideNav" >
+        <a href="javascript:void(0)" class="navItem">STATES</li>
+        <a href="javascript:void(0)" class="navItem">Alabama </li>
+        <a href="javascript:void(0)" class="navItem">Arkansas</li>
+        <a href="javascript:void(0)" class="navItem">California</li>
+        <a href="javascript:void(0)" class="navItem">Colorado</li>
+        <a href="javascript:void(0)" class="navItem">Maine</li>
+        <a href="javascript:void(0)" class="navItem">Massachusetts</li>
+        <a href="javascript:void(0)" class="navItem">Minnesota</li>
+        <a href="javascript:void(0)" class="navItem">N. Carolina</li>
+        <a href="javascript:void(0)" class="navItem">Oklahoma</li>
+        <a href="javascript:void(0)" class="navItem">Tennessee</li>
+        <a href="javascript:void(0)" class="navItem">Texas</li>
+        <a href="javascript:void(0)" class="navItem">Utah</li>
+        <a href="javascript:void(0)" class="navItem">Vermont</li>
+        <a href="javascript:void(0)" class="navItem">Virginia</li>
+        <a href="javascript:void(0)" class="navItem">Alabama</li>
     </div>
+    
+    
+    <main>
+        <section>
+            <div id="controller">
+                <ul id="buttons">
+                    <li data-contest="3447">NEW HAMPSHIRE</li>
+                    <li data-contest="3453">Belknap</li>
+                    <li data-contest="3449">Carroll</li>
+                    <li data-contest="3452">Cheshire</li>
+                    <li data-contest="3457">Coös</li>
+                    <li data-contest="3450">Grafton</li>
+                    <li data-contest="3454">Hillsborough</li>
+                    <li data-contest="3451">Merrimack</li>
+                    <li data-contest="3455">Rockingham</li>
+                    <li data-contest="3456">Strafford</li>
+                    <li data-contest="3448">Sullivan</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
