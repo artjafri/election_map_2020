@@ -29,6 +29,8 @@ $(document).ready(function () {
         var $candidateOne = $('#candidateOne');
         //data is counties
 
+        var countyData = JSON.parse(data);
+
         $.each(data.ElectionEvent.contest, function (i, contestCounty) {
           if (contestCounty.id == selectedCounty) {
             //HEADER
