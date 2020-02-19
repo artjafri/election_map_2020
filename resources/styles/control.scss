@@ -1,6 +1,6 @@
 @import "./variables";
 
-*{
+* {
 	padding: 0px;
 	margin: 0px;
 	box-sizing: border-box;
@@ -9,20 +9,52 @@
 body {
 	max-width: auto;
 	font-family: 'Montserrat', sans-serif;
+	background-color: $off-white;
+	
 }
 
+// #controller {
+// 	padding-left: 1%;
+// }
 
-#controller{
-	background-color: $red;
-		padding-left: 1%;
-}
-
-main{
+main {
 	transition: margin-left .5s;
- 	padding: 20px;
+	padding: 20px;
+	transition: 0.3s;
+	background-color: $off-white;
+
+	#menuSelector {
+		font-size: 64px;
+		font-weight: 700;
+	}
+
+	#countyListDiv{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	#countyList {
+		color: black;
+		list-style: none;
+		
+		.button {
+			font-size: 32px;
+			font-weight: 700;
+			padding: 8px;
+			width: 15vh;
+		}
+
+		.selected {
+			font-weight: 800;
+			color: $off-white;
+			background-color: $light-blue;
+			transition: 0.3s;
+		}
+	}
 }
 
-.sideNav{
+.sideNav {
 	height: 100%;
 	width: 0;
 	position: fixed;
@@ -34,28 +66,25 @@ main{
 	padding-top: 60px;
 	transition: 0.5s;
 
-	a{
-		padding: 8px 8px 8px 32px;
+	li {
+		padding: 16px;
+		padding-left: 32px;
 		text-decoration: none;
 		font-size: 25px;
-		color: $white;
+		color: $off-white;
 		display: block;
 		transition: 0.3s;
+
+		&:hover {
+			background-color: $light-blue;
+		}
 	}
 
-	.closebtn{
+	.closebtn {
 		position: absolute;
 		top: 0;
 		right: 25px;
 		font-size: 36px;
 		margin-left: 50px;
 	}
-
 }
-
-#page{
-	width: 1920px;
-	height: 1200px;
-	background: $white;
-}
-

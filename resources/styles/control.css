@@ -8,17 +8,53 @@
 body {
   max-width: auto;
   font-family: 'Montserrat', sans-serif;
-}
-
-#controller {
-  background-color: #ea2530;
-  padding-left: 1%;
+  background-color: #ffe1e1;
 }
 
 main {
   -webkit-transition: margin-left .5s;
   transition: margin-left .5s;
   padding: 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #ffe1e1;
+}
+
+main #menuSelector {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+main #countyListDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main #countyList {
+  color: black;
+  list-style: none;
+}
+
+main #countyList .button {
+  font-size: 32px;
+  font-weight: 700;
+  padding: 8px;
+  width: 15vh;
+}
+
+main #countyList .selected {
+  font-weight: 800;
+  color: #ffe1e1;
+  background-color: #00aeef;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .sideNav {
@@ -28,21 +64,26 @@ main {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #000000;
+  background-color: #131313;
   overflow-x: hidden;
   padding-top: 60px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
-.sideNav a {
-  padding: 8px 8px 8px 32px;
+.sideNav li {
+  padding: 16px;
+  padding-left: 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #ffffff;
+  color: #ffe1e1;
   display: block;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.sideNav li:hover {
+  background-color: #00aeef;
 }
 
 .sideNav .closebtn {
@@ -51,11 +92,5 @@ main {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}
-
-#page {
-  width: 1920px;
-  height: 1200px;
-  background: #ffffff;
 }
 /*# sourceMappingURL=control.css.map */

@@ -65,7 +65,7 @@ svg {
       -ms-flex-align: baseline;
           align-items: baseline;
   padding: 2%;
-  background-color: #000000;
+  background-color: #131313;
 }
 
 #subheader {
@@ -181,7 +181,7 @@ svg {
 }
 
 .vote-total {
-  color: #000000 !important;
+  color: #131313 !important;
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding: 0 2%;
