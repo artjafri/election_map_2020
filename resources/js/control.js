@@ -5,8 +5,10 @@ $(document).ready(function () {
   var socket = new WebSocket('ws://' + document.location.host + '/ws');
   
   $.ajaxSetup({ 'cache': true });
+
   $('li').off('dblclick');
 
+  let stateDisplay = null;
 
   // activate navbar
   $('#menuSelector').click(function () {
@@ -21,12 +23,12 @@ $(document).ready(function () {
      // delete previous controller
     $('#countyListDiv').empty();
   
-    // reset ul inside of div to start creating controller
+    // create ul inside of main div for the controller to go into
     var ul = $('<ul/>')
       .attr('id', 'countyList')
       .appendTo('#countyListDiv');
 
-    // to compare navbar item to data
+    // to compare navbar item text to data to see which state you're using
     let navID = $(this).text();
  
     // create new controller
@@ -35,7 +37,10 @@ $(document).ready(function () {
       // find the state you clicked on
       if (State.name == navID) {
 
+        // update header
         $('#menuSelector').text(navID);
+        
+        // close navbar
         $('#mySideNav').css('width', '0');
         $('main').css('margin-left', '0');
         $('body').css('background-color', 'white');
@@ -54,33 +59,43 @@ $(document).ready(function () {
           crossDomain: true,
           success: function (data) {
 
-            // GET req data
+            // returned API data object
             var controlData = data;
 
             // Loop through data and create a controller per contest
             $.each(controlData.ElectionPlaylist.contest, function (i, County) {
               
+              // contestId is the id of the county
               var contestId = County.id;
+
+              // ul that holds the counties
               var countyList = $('#countyList');
+              // Number used to substring the returned name to remove "state name - "
               var stateName = State.stateNameLength;
+              // the county name with the state identifier attached
               var countyName = County.area.name;
+
+              stateDisplay = State.name;
+
               
-              // make sure the first li is the whole state
               if (countyName.length > stateName) {
+                // cut out the state name from the county name
                 countyName = countyName.substring(stateName, countyName.length);
+               
               } else {
+                // Makes sure to create the first li to be the whole state
                 countyName = 'STATEWIDE';
               }
-               // append li 
+               // append li with county name and data to the ul controller
               var li = $('<li/>')
                 .attr('data-contest', contestId)
                 .addClass('button')
                 .text(countyName);
-              var toBeAppended = li;
-
-              toBeAppended.appendTo(countyList);
+              
+                li.appendTo(countyList);
             });
             
+            // format list into columns
             $("#countyListDiv").columnize({lastNeverTallest: true});
           }
         });
@@ -88,14 +103,22 @@ $(document).ready(function () {
     });
   });
   
-  $(document).on('click', '.button', function () {
+  $(document).on('click', '.button', function () { 
+    $('li').removeClass('selected');
+    $(this).addClass('selected');
+    let selectedCounty = $(this).data('contest')
+    var suffix = " county";
     
-    $('li').removeClass('selected')
+    if ($(this).text() == "STATEWIDE") {
+      $('#menuSelector').text(stateDisplay + " statewide");
 
-    $(this).addClass('selected')
+    } else {
 
-    console.log($(this).data('contest'))
+      $('#menuSelector').text($(this).text() + suffix);
+    }
+    console.log(selectedCounty)
+    socket.send(selectedCounty);
+
   });
-    // socket.send(selectedCounty);
- 
+     
 });
