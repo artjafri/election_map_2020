@@ -1,15 +1,12 @@
 import States from '/js/stateObjects.js'
 
-
 $(document).ready(function () {
   var socket = new WebSocket('ws://' + document.location.host + '/ws');
   
-  $.ajaxSetup({ 'cache': true });
-
-  $('li').off('dblclick');
-
+  // $.ajaxSetup({ 'cache': true });
   let stateDisplay = null;
-
+  
+  var selectedCounty = null;
   // activate navbar
   $('#menuSelector').click(function () {
     $('#mySideNav').css('width', '250px');
@@ -92,7 +89,8 @@ $(document).ready(function () {
                 .addClass('button')
                 .text(countyName);
               
-                li.appendTo(countyList);
+              li.appendTo(countyList);
+              
             });
             
             // format list into columns
@@ -106,7 +104,7 @@ $(document).ready(function () {
   $(document).on('click', '.button', function () { 
     $('li').removeClass('selected');
     $(this).addClass('selected');
-    let selectedCounty = $(this).data('contest')
+    var selectedCounty = $(this).data('contest')
     var suffix = " county";
     
     if ($(this).text() == "STATEWIDE") {
@@ -116,9 +114,10 @@ $(document).ready(function () {
 
       $('#menuSelector').text($(this).text() + suffix);
     }
-    console.log(selectedCounty)
+    
     socket.send(selectedCounty);
-
+    console.log(selectedCounty) 
   });
-     
 });
+
+
