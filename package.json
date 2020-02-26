@@ -12,8 +12,12 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-ws": "^4.0.0",
+    "gsap": "^3.2.0",
     "node-sass": "^4.13.1",
     "parcel-bundler": "^1.12.4",
     "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "@dogstudio/highway": "^2.1.3"
   }
 }

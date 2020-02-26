@@ -1,10 +1,19 @@
+import { Highway } from '../../node_modules/@dogstudio/highway/build/highway.js';
+import Fade from './mapTransition.js';
+
+
 $(document).ready(function () {
 	var socket = new WebSocket('ws://' + document.location.host + '/ws');
   socket.onmessage = function (event) { 
-		var selectedCounty = parseInt(event.data);
+    var data = JSON.parse(event.data);
+    var selectedCounty = data.selectedCounty;
+    var state = data.map;
     var counties = $("[class|= 'county']");
-    
+
+    console.log(data)
+    console.log(selectedCounty, state, counties)
     $('#county-name-display').text(selectedCounty)
+    
 
     // $.each(counties, function (i, countyShape) {
     //   $(".county").removeClass('mapSelected');
@@ -13,8 +22,6 @@ $(document).ready(function () {
     //     return false;
     //   }
     // })
-
-    console.log(selectedCounty)
   };
 });
 

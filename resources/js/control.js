@@ -6,7 +6,8 @@ $(document).ready(function () {
   // $.ajaxSetup({ 'cache': true });
   let stateDisplay = null;
   
-  var selectedCounty = null;
+  let controlData = null;
+
   // activate navbar
   $('#menuSelector').click(function () {
     $('#mySideNav').css('width', '250px');
@@ -57,7 +58,8 @@ $(document).ready(function () {
           success: function (data) {
 
             // returned API data object
-            var controlData = data;
+            controlData = data;
+           
 
             // Loop through data and create a controller per contest
             $.each(controlData.ElectionPlaylist.contest, function (i, County) {
@@ -115,8 +117,14 @@ $(document).ready(function () {
       $('#menuSelector').text($(this).text() + suffix);
     }
     
-    socket.send(selectedCounty);
-    console.log(selectedCounty) 
+    var dataSet = {
+      type: "message",
+      selectedCounty: selectedCounty,
+      data: controlData,
+      map:stateDisplay
+    }
+    socket.send(JSON.stringify(dataSet));
+    console.log(selectedCounty, stateDisplay)
   });
 });
 
