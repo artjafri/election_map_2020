@@ -1,37 +1,48 @@
-import { Highway } from '../../node_modules/@dogstudio/highway/build/highway.js';
-import Fade from './mapTransition.js';
-
-
-$(document).ready(function () {
+$(document).ready(function() {
 	var socket = new WebSocket('ws://' + document.location.host + '/ws');
-  socket.onmessage = function (event) { 
-    var data = JSON.parse(event.data);
-    var selectedCounty = data.selectedCounty;
-    var state = data.map;
-    var counties = $("[class|= 'county']");
 
-    console.log(data)
-    console.log(selectedCounty, state, counties)
-    $('#county-name-display').text(selectedCounty)
-    
+	socket.onmessage = function(event) {
+		var DATA = JSON.parse(event.data);
+		var selectedCounty = DATA.selectedCounty;
+    var selectedState = DATA.map;
+		var counties = $("[class|= 'county']");
+    var states = $('div.map');
+    var $path = null; 
 
-    // $.each(counties, function (i, countyShape) {
-    //   $(".county").removeClass('mapSelected');
-    //   if ($(this).data('contest') == selectedCounty) {
-    //     $(this).addClass('mapSelected');
-    //     return false;
-    //   }
-    // })
-  };
+    console.log(selectedCounty);
+ 
+    // activate state
+    $.each(states, function (i, STATES) {
+      $(this).removeClass('active-state')
+     
+      if ($(this).data('state') == selectedState) {
+        $(this).removeClass('inactive-state');
+        $(this).addClass('active-state');
+
+        $path = $(this).find('path')
+      } else { $(this).addClass('inactive-state') }
+
+    });
+
+    $.each(counties, function (i, COUNTY) {
+      $(this).removeClass('selected-county');
+      // console.log($(this).attr('id'))
+      if ($(this).attr('id') == selectedCounty.toLowerCase())
+        alert($(this).attr('id'))
+    })
+
+
+
+    $('#county-name-display').text(selectedCounty);
+
+
+		// $.each(counties, function (i, countyshape) {
+
+		// });
+
+		
+	};
 });
-
-
-
-
-
-
-
-
 
 // $.each(counties, function(i, countyShape) {
 // 			$('.county').removeClass('selected');

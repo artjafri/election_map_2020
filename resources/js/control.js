@@ -5,6 +5,7 @@ $(document).ready(function () {
   
   // $.ajaxSetup({ 'cache': true });
   let stateDisplay = null;
+  let stateId = null;
   
   let controlData = null;
 
@@ -74,7 +75,11 @@ $(document).ready(function () {
               // the county name with the state identifier attached
               var countyName = County.area.name;
 
+              var CN = County.area.nameShort;
+              var contestName = CN.substring(5, CN.length);
+
               stateDisplay = State.name;
+              stateId = State.id;
 
               
               if (countyName.length > stateName) {
@@ -88,6 +93,7 @@ $(document).ready(function () {
                // append li with county name and data to the ul controller
               var li = $('<li/>')
                 .attr('data-contest', contestId)
+                .attr('data-contest-name', contestName)
                 .addClass('button')
                 .text(countyName);
               
@@ -104,10 +110,12 @@ $(document).ready(function () {
   });
   
   $(document).on('click', '.button', function () { 
+
     $('li').removeClass('selected');
-    $(this).addClass('selected');
-    var selectedCounty = $(this).data('contest')
-    var suffix = " county";
+    // $(this).addClass('selected');
+
+    var selectedCounty = $(this).data('contest-name')
+    var suffix = "";
     
     if ($(this).text() == "STATEWIDE") {
       $('#menuSelector').text(stateDisplay + " statewide");
@@ -118,13 +126,12 @@ $(document).ready(function () {
     }
     
     var dataSet = {
-      type: "message",
       selectedCounty: selectedCounty,
-      data: controlData,
-      map:stateDisplay
+      map: stateId,
+      data: controlData.ElectionPlaylist.contest
     }
     socket.send(JSON.stringify(dataSet));
-    console.log(selectedCounty, stateDisplay)
+    console.log(selectedCounty, stateDisplay, dataSet.map)
   });
 });
 

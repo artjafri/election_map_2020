@@ -11,28 +11,112 @@ body {
   width: 1920px;
 }
 
-.home {
+#content {
   width: 100%;
   height: 100%;
-  position: absolute;
   background-image: linear-gradient(85deg, black 0%, #090979 32%, #0099ff 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-.selected {
+#map-content {
+  height: 860px;
+  width: 1145px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#map-content .active-state {
+  opacity: 100;
+  z-index: 1;
+}
+
+#map-content .inactive-state {
+  opacity: 0;
+  z-index: -3;
+}
+
+#map-content .map {
+  height: 800px;
+  width: 1145px;
+  position: absolute;
+}
+
+#map-content .county {
+  fill: red;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+#map-content .selected-county {
   fill: #ffffff !important;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
 
-.county {
-  fill: red;
-  stroke: #ffffff;
-  stroke-width: 1px;
-  stroke-linejoin: round;
+#map-content svg {
+  display: block;
+  margin: auto;
 }
 
-.active-county {
-  background-color: #00aeef !important;
-  color: #ffffff !important;
+.candidate {
+  width: 592px;
+  height: 120px;
+  background: #131313;
+}
+
+.candidate .fName {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 100%;
+  color: #ffffff;
+}
+
+.candidate .lName {
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.candidate .dCount {
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 100%;
+  color: #ffffff;
+}
+
+.candidate .subSec {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 /*# sourceMappingURL=map.css.map */
