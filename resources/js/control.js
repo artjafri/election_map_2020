@@ -85,6 +85,7 @@ $(document).ready(function () {
               if (countyName.length > stateName) {
                 // cut out the state name from the county name
                 countyName = countyName.substring(stateName, countyName.length);
+                countyName = countyName.replace('County', '');
                
               } else {
                 // Makes sure to create the first li to be the whole state
@@ -127,6 +128,7 @@ $(document).ready(function () {
     
     var dataSet = {
       selectedCounty: selectedCounty,
+      name: stateDisplay,
       map: stateId,
       data: controlData.ElectionPlaylist.contest
     }

@@ -59,8 +59,8 @@ body {
 }
 
 #map-content .county {
-  fill: red;
-  stroke: #ffffff;
+  fill: #ffe1e1;
+  stroke: #201f1f;
   stroke-width: 3px;
   stroke-linejoin: round;
 }
@@ -71,15 +71,74 @@ body {
           transition-duration: 1s;
 }
 
+#map-content .not-selected-county {
+  opacity: 60%;
+}
+
 #map-content svg {
   display: block;
   margin: auto;
 }
 
+#sideBar {
+  width: 600px;
+  height: 180px;
+  background: #131313;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 25px 0;
+}
+
+#sideBar #state-name {
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 100%;
+  /* or 64px */
+  color: #ffffff;
+}
+
+#sideBar #county-name {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  /* or 64px */
+  color: #ffffff;
+}
+
+#sideBar #reporting {
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 100%;
+  /* or 64px */
+  color: #ffffff;
+}
+
 .candidate {
-  width: 592px;
+  padding: 3px;
+  width: 600px;
   height: 120px;
   background: #131313;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.candidate .portrait {
+  width: 120px;
+  height: 120px;
 }
 
 .candidate .fName {
@@ -118,5 +177,32 @@ body {
           align-items: left;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.candidate .vote-percent {
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 100%;
+  text-align: right;
+  color: #ffffff;
+}
+
+.candidate .total-votes {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  /* or 24px */
+  text-align: right;
+  color: #ffffff;
+}
+
+.candidate .perc-symbol {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 100%;
+  /* or 36px */
+  text-align: right;
+  color: #ffffff;
 }
 /*# sourceMappingURL=map.css.map */

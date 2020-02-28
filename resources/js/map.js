@@ -5,42 +5,71 @@ $(document).ready(function() {
 		var DATA = JSON.parse(event.data);
 		var selectedCounty = DATA.selectedCounty;
     var selectedState = DATA.map;
+    var APdata = DATA.data;
 		var counties = $("[class|= 'county']");
-    var states = $('div.map');
-    var $path = null; 
+		var states = $('div.map');
+    var $path = null;
+    
+    console.log(APdata)
 
-    console.log(selectedCounty);
- 
-    // activate state
-    $.each(states, function (i, STATES) {
-      $(this).removeClass('active-state')
-     
-      if ($(this).data('state') == selectedState) {
-        $(this).removeClass('inactive-state');
-        $(this).addClass('active-state');
+		// activate state
+		$.each(states, function(i, STATES) {
+			$(this).removeClass('active-state');
 
-        $path = $(this).find('path')
-      } else { $(this).addClass('inactive-state') }
+			if ($(this).data('state') == selectedState) {
+				$(this).removeClass('inactive-state');
+				$(this).addClass('active-state');
 
-    });
+				$path = $(this).find('path');
+			}
+			else {
+				$(this).addClass('inactive-state');
+			}
+		});
 
-    $.each(counties, function (i, COUNTY) {
-      $(this).removeClass('selected-county');
-      // console.log($(this).attr('id'))
-      if ($(this).attr('id') == selectedCounty.toLowerCase())
-        alert($(this).attr('id'))
-    })
+		// console.log($path)
 
+		$.each($path, function(i, COUNTY) {
+			$(this).removeClass('selected-county');
+			var id = $(this).attr('id') + ' county';
+			id = id.toLowerCase();
+			// console.log(id)
+			if (id == selectedCounty.toLowerCase()) {
+				$(this).removeClass('not-selected-county');
+				$(this).addClass('selected-county');
+			}
+			else {
+				$(this).addClass('not-selected-county');
+			}
+		});
 
+    $.each($path, function (i, contestCounty) {
+      
+			var thisCounty = contestCounty.id + ' county';
+			thisCounty = thisCounty.toLocaleLowerCase();
+			selectedCounty = selectedCounty.toLocaleLowerCase();
 
-    $('#county-name-display').text(selectedCounty);
+			if (thisCounty == selectedCounty) {
+				c1 = APdata.choice[1];
+				var c1Fname = $('.fName');
+				var c1Lname = $('.lName');
+				var c1VotePercentage = $('.vote-percent');
+				var c1TotalVotes = $('.total-votes');
+				var c1Photo = $('#cOnePhoto');
 
+				c1Fname.text(c1.firstName);
+				c1Lname.text(c1.lastName);
+				c1VotePercentage.text(c1.votes.votePercent + '%');
+				c1TotalVotes.text(c1.votes.total);
+			}
+		});
+
+		$('#county-name').text(selectedCounty);
+		$('#state-name').text(DATA.name);
 
 		// $.each(counties, function (i, countyshape) {
 
 		// });
-
-		
 	};
 });
 
