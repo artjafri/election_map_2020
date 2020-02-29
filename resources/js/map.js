@@ -8,9 +8,9 @@ $(document).ready(function() {
     var APdata = DATA.data;
 		var counties = $("[class|= 'county']");
 		var states = $('div.map');
-    var $path = null;
+    var mapBlocks = null;
     
-    console.log(APdata)
+    // console.log(APdata)
 
 		// activate state
 		$.each(states, function(i, STATES) {
@@ -20,16 +20,16 @@ $(document).ready(function() {
 				$(this).removeClass('inactive-state');
 				$(this).addClass('active-state');
 
-				$path = $(this).find('path');
+				mapBlocks = $(this).find('path');
 			}
 			else {
 				$(this).addClass('inactive-state');
 			}
 		});
 
-		// console.log($path)
+		// console.log(mapBlocks)
 
-		$.each($path, function(i, COUNTY) {
+		$.each(mapBlocks, function(i, COUNTY) {
 			$(this).removeClass('selected-county');
 			var id = $(this).attr('id') + ' county';
 			id = id.toLowerCase();
@@ -41,27 +41,32 @@ $(document).ready(function() {
 			else {
 				$(this).addClass('not-selected-county');
 			}
-		});
+    });
 
-    $.each($path, function (i, contestCounty) {
+    $.each(APdata, function (i, contest) {
+      var contests = 
+    })
+
+
+    $.each(mapBlocks, function (i, contestCounty) {
       
 			var thisCounty = contestCounty.id + ' county';
 			thisCounty = thisCounty.toLocaleLowerCase();
 			selectedCounty = selectedCounty.toLocaleLowerCase();
 
-			if (thisCounty == selectedCounty) {
-				c1 = APdata.choice[1];
-				var c1Fname = $('.fName');
-				var c1Lname = $('.lName');
-				var c1VotePercentage = $('.vote-percent');
-				var c1TotalVotes = $('.total-votes');
-				var c1Photo = $('#cOnePhoto');
+		// 	if (thisCounty == selectedCounty) {
+		// 		c1 = APdata.choice[1];
+		// 		var c1Fname = $('.fName');
+		// 		var c1Lname = $('.lName');
+		// 		var c1VotePercentage = $('.vote-percent');
+		// 		var c1TotalVotes = $('.total-votes');
+		// 		var c1Photo = $('#cOnePhoto');
 
-				c1Fname.text(c1.firstName);
-				c1Lname.text(c1.lastName);
-				c1VotePercentage.text(c1.votes.votePercent + '%');
-				c1TotalVotes.text(c1.votes.total);
-			}
+		// 		c1Fname.text(c1.firstName);
+		// 		c1Lname.text(c1.lastName);
+		// 		c1VotePercentage.text(c1.votes.votePercent + '%');
+		// 		c1TotalVotes.text(c1.votes.total);
+		// 	}
 		});
 
 		$('#county-name').text(selectedCounty);
