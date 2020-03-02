@@ -37,18 +37,25 @@ main {
 	#countyList {
 		color: black;
 		list-style: none;
+
+		li{
+			float: left;
+		}
+		
 		
 		.button {
 			font-size: 32px;
 			font-weight: 700;
 			padding: 8px;
 			width: 15vh;
+			
 		}
 
 		.selected {
 			font-weight: 800;
 			color: $off-white;
 			background-color: $light-blue;
+			
 			transition: 0.3s;
 		}
 	}
@@ -72,7 +79,7 @@ main {
 		text-decoration: none;
 		font-size: 25px;
 		color: $off-white;
-		display: block;
+		float: left;
 		transition: 0.3s;
 
 		&:hover {
