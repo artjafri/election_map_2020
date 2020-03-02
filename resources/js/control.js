@@ -6,7 +6,7 @@ $(document).ready(function() {
 	// $.ajaxSetup({ 'cache': true });
 	let stateDisplay = null;
 	let stateId = null;
-
+  let url = null;
 	let controlData = null;
 
 	// activate navbar
@@ -20,6 +20,7 @@ $(document).ready(function() {
 	$('.navItem').click(function() {
 	// to compare navbar item text to data to see which state you're using
     let navID = $(this).text();
+    url = $(this).data('url');
 
     stateDisplay = navID;
     //url for the controller file
@@ -40,22 +41,27 @@ $(document).ready(function() {
 			$('li').removeClass('selected');
 			$(this).addClass('selected');
 
-			var selectedCounty = $(this).data('contest');
+    var selectedCounty = $(this).data('contest');
+    var nameLength = stateDisplay.length;
+  
+    
 
 			if ($(this).text() == 'STATEWIDE') {
 				$('#menuSelector').text(stateDisplay + ' statewide');
 			}
 			else {
 				$('#menuSelector').text($(this).text() + ' county');
-			}
+    }
+    
 
 			var dataSet = {
 				selectedCounty : selectedCounty,
-				name           : stateDisplay,
-				map            : stateId,
+        name: stateDisplay,
+        nameLength: nameLength,
+				url            : url,
 			};
 
 			socket.send(JSON.stringify(dataSet));
-			console.log(stateDisplay, selectedCounty);
+			console.log(stateDisplay, selectedCounty, url, nameLength);
 		});
 });
