@@ -10,24 +10,28 @@
 body {
 	height: 1080px;
 	width: 1920px;
+	background-image:linear-gradient(31.8deg, #FF848B -13.28%, #FFE8C6 48.07%, #64D5FF 104.52%);
+
 }
 
 #content {
+
 	width: 100%;
 	height: 100%;
-	// margin: $title-safe;
-	background-image: linear-gradient(85deg, rgba(0, 0, 0, 1) 0%, rgba(9, 9, 121, 1) 32%, rgba(0, 153, 255, 1) 100%);
+	margin: $title-safe;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-around;
 }
 
 #map-content {
 	height: 860px;
 	width: 1145px;
+
 	display: flex;
 	align-items: center;
+
 	justify-content: space-around;
 
 	.active-state {
@@ -45,7 +49,6 @@ body {
 		position: absolute;
 	}
 	.county {
-		fill: $off-white;
 		stroke: $dark;
 		stroke-width: 3px;
 		stroke-linejoin: round;
@@ -63,17 +66,20 @@ body {
 		// position: fixed;
 	}
 }
-
+.bennet{
+	fill: red;
+	color: red;
+}
 #sideBar {
 	width: 600px;
-	height: 180px;
+	height: 140px;
 	background: $black;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	margin: 25px 0;
+	margin: 20px 0;
 
-		#state-name {
+		#state-name-display {
 
 		font-weight: 600;
 		font-size: 50px;
@@ -84,7 +90,7 @@ body {
 	}
 
 	
-		#county-name {
+		#county-name-display {
 
 		font-weight: 400;
 		font-size: 40px;
@@ -94,7 +100,7 @@ body {
 		color: $white;
 	}
 
-		#reporting {
+		#reporting-display {
 
 		font-weight: 400;
 		font-size: 35px;
@@ -107,24 +113,26 @@ body {
 }
 
 .candidate {
-	padding: 3px;
+	padding: 10px;
+	margin: 20px 0;
 	width: 600px;
-	height: 120px;
-	background: $black;
+	height: 130px;
+	background: blue;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 
 	.portrait {
-		width: 120px;
-		height: 120px;
+		width: 100px;
+		height: 100px;
 	}
 
 	.fName {
 		font-weight: 500;
+		margin: 15px 0;
 		font-size: 36px;
 		line-height: 100%;
-		color: $white;
+		color: $white !important;
 	}
 	.lName {
 		font-weight: 800;
@@ -139,16 +147,28 @@ body {
 		line-height: 100%;
 		color: $white;
 	}
-	.subSec {
+	.subSec-1 {
 		height: 100%;
+		width: 250px;
 		display: flex;
 		flex-direction: column;
 		align-items: left;
-		justify-content: space-around;
+		align-self: flex-start;
+		justify-content: center;
+	}
+
+	.subSec-2{
+		height: 100%;
+		width: 200px;
+		display: flex;
+		flex-direction: column;
+		align-content: right;
+		justify-content: center;
 	}
 
 	.vote-percent {
 		font-weight: bold;
+		margin-bottom: 10px;
 		font-size: 64px;
 		line-height: 100%;
 		text-align: right;

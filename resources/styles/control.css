@@ -65,6 +65,7 @@ main #countyList .selected {
   top: 0;
   left: 0;
   background-color: #131313;
+  list-style: none;
   overflow-x: hidden;
   padding-top: 60px;
   -webkit-transition: 0.5s;
@@ -77,7 +78,6 @@ main #countyList .selected {
   text-decoration: none;
   font-size: 25px;
   color: #ffe1e1;
-  display: block;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }

@@ -9,12 +9,13 @@
 body {
   height: 1080px;
   width: 1920px;
+  background-image: linear-gradient(31.8deg, #FF848B -13.28%, #FFE8C6 48.07%, #64D5FF 104.52%);
 }
 
 #content {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(85deg, black 0%, #090979 32%, #0099ff 100%);
+  margin: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,9 +23,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -59,7 +60,6 @@ body {
 }
 
 #map-content .county {
-  fill: #ffe1e1;
   stroke: #201f1f;
   stroke-width: 3px;
   stroke-linejoin: round;
@@ -80,9 +80,14 @@ body {
   margin: auto;
 }
 
+.bennet {
+  fill: red;
+  color: red;
+}
+
 #sideBar {
   width: 600px;
-  height: 180px;
+  height: 140px;
   background: #131313;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,10 +98,10 @@ body {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin: 25px 0;
+  margin: 20px 0;
 }
 
-#sideBar #state-name {
+#sideBar #state-name-display {
   font-weight: 600;
   font-size: 50px;
   line-height: 100%;
@@ -104,7 +109,7 @@ body {
   color: #ffffff;
 }
 
-#sideBar #county-name {
+#sideBar #county-name-display {
   font-weight: 400;
   font-size: 40px;
   line-height: 100%;
@@ -112,7 +117,7 @@ body {
   color: #ffffff;
 }
 
-#sideBar #reporting {
+#sideBar #reporting-display {
   font-weight: 400;
   font-size: 35px;
   line-height: 100%;
@@ -121,10 +126,11 @@ body {
 }
 
 .candidate {
-  padding: 3px;
+  padding: 10px;
+  margin: 20px 0;
   width: 600px;
-  height: 120px;
-  background: #131313;
+  height: 130px;
+  background: blue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,20 +138,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .candidate .portrait {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 
 .candidate .fName {
   font-weight: 500;
+  margin: 15px 0;
   font-size: 36px;
   line-height: 100%;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .candidate .lName {
@@ -163,8 +171,9 @@ body {
   color: #ffffff;
 }
 
-.candidate .subSec {
+.candidate .subSec-1 {
   height: 100%;
+  width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,12 +184,33 @@ body {
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.candidate .subSec-2 {
+  height: 100%;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: right;
+      align-content: right;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .candidate .vote-percent {
   font-weight: bold;
+  margin-bottom: 10px;
   font-size: 64px;
   line-height: 100%;
   text-align: right;

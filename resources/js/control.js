@@ -29,7 +29,7 @@ $(document).ready(function() {
     //load url file
     $('#countyListDiv').load(navURL);
     //update header
-		$('#menuSelector').text(navID);
+    $('#menuSelector').text(navID);
 
 		// close navbar
 		$('#mySideNav').css('width', '0');
