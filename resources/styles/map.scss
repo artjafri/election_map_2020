@@ -28,7 +28,6 @@ body {
 #map-content {
 	height: 860px;
 	width: 1145px;
-
 	display: flex;
 	align-items: center;
 
@@ -66,10 +65,18 @@ body {
 		// position: fixed;
 	}
 }
-.bennet{
+
+.Bennet{
 	fill: red;
 	color: red;
+	opacity: 60%;
 }
+.Biden{
+	fill: green;
+	color: green;
+	opacity: 60%;
+}
+
 #sideBar {
 	width: 600px;
 	height: 140px;
@@ -100,7 +107,17 @@ body {
 		color: $white;
 	}
 
-		#reporting-display {
+		#reporting{
+
+		font-weight: 400;
+		font-size: 35px;
+		line-height: 100%;
+		/* or 64px */
+
+		color: $white;
+	}
+
+		#reporting-display{
 
 		font-weight: 400;
 		font-size: 35px;

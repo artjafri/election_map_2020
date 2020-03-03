@@ -80,9 +80,16 @@ body {
   margin: auto;
 }
 
-.bennet {
+.Bennet {
   fill: red;
   color: red;
+  opacity: 60%;
+}
+
+.Biden {
+  fill: green;
+  color: green;
+  opacity: 60%;
 }
 
 #sideBar {
@@ -112,6 +119,14 @@ body {
 #sideBar #county-name-display {
   font-weight: 400;
   font-size: 40px;
+  line-height: 100%;
+  /* or 64px */
+  color: #ffffff;
+}
+
+#sideBar #reporting {
+  font-weight: 400;
+  font-size: 35px;
   line-height: 100%;
   /* or 64px */
   color: #ffffff;

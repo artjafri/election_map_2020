@@ -1,120 +1,203 @@
 $(document).ready(function() {
 	var socket = new WebSocket('ws://' + document.location.host + '/ws');
-
+	var previousState;
+			var currentState;
 	socket.onmessage = function(event) {
 		var DATA = JSON.parse(event.data);
 		var selectedCounty = DATA.selectedCounty;
 		var selectedState = DATA.name;
-		var namelength = DATA.namelength;
+		var nameSize = parseInt(DATA.stateNameSize);
 		var states = $('div.map');
 		var key = DATA.url;
 		var url = 'http://10.18.55.37/tickit/blade/election/playlist/' + key + '/?format=jsonp&callback=?&pretty=yes';
-		var mapBlocks = null;
-
-		$('#state-name-display').text(selectedState);
-		//console.log(selectedCounty, selectedState, states);
-		// activate state
-		$.each(states, function(i, STATES) {
-			$(this).removeClass('active-state');
-			if ($(this).attr('id') == selectedState) {
-				var counties = $("[class|= 'county']");
-
-				$(this).removeClass('inactive-state');
-				$(this).addClass('active-state');
-				mapBlocks = $(this).find('path');
-
-				$.ajax({
-					type        : 'GET',
-					url         : url,
-					dataType    : 'json',
-					contentType : 'application/json',
-					headers     : { accept: 'application/json' },
-					crossDomain : true,
-					success     : function(data) {
-						// returned API data object
-						var controlData = data;
-
-						$.each(controlData.ElectionPlaylist.contest, function (i, contest) {							
-							
-							if (contest.id == selectedCounty) {
-								
-								var name = this.area.name;
-								
-								
-								var contestName = name.substring(10, name.length);
-								contestName = contestName.toLowerCase();
-
-								$('county-name-display').text(contestName);
-
-								$('#candidates').empty();
-
-								$.each(counties, function (i, contestCounty) {
-
-								var id = this.id;
-								var ID = id.toLowerCase();
-								$('.county').removeClass('selected-county');
-								$('.county').removeClass('not-selected-county')
-
-								if (ID == contestName) {
-									$(this).addClass('selected-county');
-
-									return false;
-								} 
-							``});
-
-								for (var i = 0; i < 5; i++){
-									
-									var currentChoice = this.choice[i]
-
-									let candidate = {
-									fName:currentChoice.firstName,
-									lName:currentChoice.lastName,
-									totalVotes:currentChoice.votes.total,
-									votePercentage:currentChoice.votes.votePercent,
-									photo:'/images/candidate_portraits/' + currentChoice.headShot.media.fileName
-									}
-
-									$('#candidates').append(
-										$('<div/>', { 'class': 'candidate' }).append(
-											$('<img/>', { 'class': 'portrait', 'src': candidate.photo }),
-											$('<div/>', { 'class': 'subSec-1' }).append(
-												$('<h1/>', {
-													'class': 'fName',
-													'text': candidate.fName
-												}),
-												$('<h1/>', {
-													'class': 'lName',
-													'text': candidate.lName
-												})
-											),
-											$('<div/>', { 'class': 'subSec-2', }).append(
-												$('<h1/>', {
-													'class': 'vote-percent',
-													'text': candidate.votePercentage
-												}).append($('<span/>', { 'class': 'perc-symbol', 'text' : '%'})),
-												
-												$('<h1/>', {
-													'class': 'total-votes',
-													'text': candidate.totalVotes +" votes"
-												})
-											)
-										)
-									)	
-									
-								} 
 	
+		const counties = $("[class|= 'county']");
+		
+		//console.log(selectedCounty);
 
-								
-							} 
-						})
-						
+		var controlData;
+		
+		
+
+		function callBack(response) {
+			controlData = response;
+			currentState = selectedState;
+			
+			countyLead();
+
+			if (previousState != currentState) {
+				console.log(previousState, currentState, "did it change?")
+				activateState();
+			}
+			
+			displayUpdate();
+			selectedPath();
+			previousState = currentState;
+			
+		}
+
+		$.ajax({
+			type        : 'GET',
+			url         : url,
+			dataType    : 'json',
+			contentType : 'application/json',
+			headers     : { accept: 'application/json' },
+			crossDomain : true,
+			success     : callBack
+		});
+
+
+		var selectedPath = function () {
+		
+		}
+
+		var countyLead = function() {
+			$.each(controlData.ElectionPlaylist.contest, function(i, contest) {
+				let name = this.area.name;
+				var contestName = name.substring(nameSize, name.length);
+				contestName = contestName.toLowerCase();
+
+				let colorChoice = this.choice[0].notes;
+				// var printMe = $(contestName);
+
+				$.each(counties, function (i, colorCounty) {
+
+					var countyId = colorCounty.id;
+					var idCheck = countyId.toLowerCase();
+					console.log(idCheck, contestName)
+					if (idCheck == contestName) {
+						$(this).addClass(colorChoice); 
 					}
 				});
-			}
-			else {
-				$(this).addClass('inactive-state');
-			}
-		});
+				//add the color attribute here and then fill in the choice in the sidebar when selected
+			});
+		};
+
+		var displayUpdate = function () {
+			
+			$.each(controlData.ElectionPlaylist.contest, function(i, contest) {
+				let contestID = this.id;
+
+				if (contestID == selectedCounty) {	
+					// delete candidates
+					$('#candidates').empty();
+
+					// update side bar
+					var countyNameDisplay = this.area.nameShort;
+					var reportingPercentDisplay = this.polls.reportedPercent;
+					if (countyNameDisplay.length <= 5) {
+						$('#county-name-display').text('Statewide');
+					}
+					else {
+						countyNameDisplay = countyNameDisplay.substring(5, countyNameDisplay.length);
+						$('#county-name-display').text(countyNameDisplay);
+					}
+
+					// update reporting percent
+					if (reportingPercentDisplay.length <= 0) {
+						$('#reporting-display').text('none');
+					} else {
+						$('#reporting-display').text(reportingPercentDisplay + " %");	
+					}
+					
+
+					// create candidates
+					for (var i = 0; i < 5; i++) {
+						var currentChoice = this.choice[i];
+
+						let candidate = {
+							fName          : currentChoice.firstName,
+							lName          : currentChoice.lastName,
+							totalVotes     : currentChoice.votes.total,
+							votePercentage : currentChoice.votes.votePercent,
+							photo          : '/images/candidate_portraits/' + currentChoice.headShot.media.fileName
+						};
+
+						$('#candidates').append(
+							$('<div/>', { class: 'candidate' }).append(
+								$('<img/>', { class: 'portrait', src: candidate.photo }),
+								$('<div/>', { class: 'subSec-1' }).append(
+									$('<h1/>', {
+										class : 'fName',
+										text  : candidate.fName
+									}),
+									$('<h1/>', {
+										class : 'lName',
+										text  : candidate.lName
+									})
+								),
+								$('<div/>', { class: 'subSec-2' }).append(
+									$('<h1/>', {
+										class : 'vote-percent',
+										text  : candidate.votePercentage
+									}).append($('<span/>', { class: 'perc-symbol', text: '%' })),
+									$('<h1/>', {
+										class : 'total-votes',
+										text  : candidate.totalVotes + ' votes'
+									})
+								)
+							)
+						);
+					}
+				}
+			});
+		};
+
+		var activateState = function () {
+			
+			$('#state-name-display').text(selectedState);
+			// activate state
+			animateOff();
+
+			// $.each(states, function (i, STATES) {
+
+			// 	$(this).removeClass('active-state');
+
+			// 	if ($(this).attr('id') != selectedState) {
+			// 		$(this).addClass('inactive-state')
+
+			// 	}
+			// 	else {
+			// 		$(this).removeClass('inactive-state');
+			// 		$(this).addClass('active-state');
+			// 	}
+			// });
+			animateOn();
+		};
+
+		var animateOff = function() {
+			$('.map').animate(
+				{
+					right : '-100%'
+				},
+				500,
+				function() {
+					$.each(states, function(i, STATES) {
+						$(this).removeClass('active-state');
+
+						if ($(this).attr('id') != selectedState) {
+							$(this).addClass('inactive-state');
+							console.log('changed')
+						}
+						else {
+							$(this).removeClass('inactive-state');
+							$(this).addClass('active-state');
+						}
+					});
+				}
+			);
+		};
+
+		var animateOn = function() {
+			$('.map').animate(
+				{
+					right : '0'
+				},
+				500, function () {
+					displayUpdate();
+				}
+			);
+		};
 	};
 });
 // $.each(counties, function(i, countyShape) {

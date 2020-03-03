@@ -4,7 +4,8 @@ $(document).ready(function() {
 	var socket = new WebSocket('ws://' + document.location.host + '/ws');
 
 	// $.ajaxSetup({ 'cache': true });
-	let stateDisplay = null;
+  let stateDisplay = null;
+  let nameSize = null;
 	let stateId = null;
   let url = null;
 	let controlData = null;
@@ -18,11 +19,15 @@ $(document).ready(function() {
 
 	// main list function, activate by clicking item in navbar
 	$('.navItem').click(function() {
-	// to compare navbar item text to data to see which state you're using
+  // to compare navbar item text to data to see which state you're using
+  
     let navID = $(this).text();
     url = $(this).data('url');
 
+    nameSize = $(this).data('size');
+
     stateDisplay = navID;
+
     //url for the controller file
 		let navURL = '/controllers/' + navID + '.html';
 
@@ -42,10 +47,7 @@ $(document).ready(function() {
 			$(this).addClass('selected');
 
     var selectedCounty = $(this).data('contest');
-    var nameLength = stateDisplay.length;
   
-    
-
 			if ($(this).text() == 'STATEWIDE') {
 				$('#menuSelector').text(stateDisplay + ' statewide');
 			}
@@ -57,11 +59,11 @@ $(document).ready(function() {
 			var dataSet = {
 				selectedCounty : selectedCounty,
         name: stateDisplay,
-        nameLength: nameLength,
+        stateNameSize: nameSize,
 				url            : url,
 			};
 
 			socket.send(JSON.stringify(dataSet));
-			console.log(stateDisplay, selectedCounty, url, nameLength);
+			console.log(stateDisplay, selectedCounty, url, nameSize);
 		});
 });
