@@ -59,19 +59,28 @@ $(document).ready(function() {
 			console.log("county lead " + selectedCounty)
 			
 			$.each(controlData.ElectionPlaylist.contest, function (i, contest) {
-				let name = this.area.name;
-				// var printMe = $(contestName);
-				$.each(counties, function (i, colorCounty) {				
+				
+				if (contest.id == selectedCounty) {
 					
+					$.each(counties, function (i, colorCounty) {				
+					
+					$('.county').removeClass('selected-county');
+					$('.county').removeClass('not-selected-county')
+						
 					var countyId = $(this).data('contest')
 
 					if (countyId == selectedCounty) {
-						console.log("counties in county lead " + $(this).data('contest'))
-						$(colorCounty).addClass(selectedCounty);
-					// 	$(this).attr('data-contest', theContestID);
-					// 	console.log(theContestID, $(this).data('contest'))
+						console.log("counties in county lead " + $(this).attr('id'))
+						$(this).addClass('selected-county');
+						return false
 					}
 				});
+
+
+
+				}
+
+				
 				//add the color attribute here and then fill in the choice in the sidebar when selected
 			});
 		};

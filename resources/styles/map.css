@@ -63,11 +63,11 @@ body {
   stroke: #201f1f;
   stroke-width: 3px;
   stroke-linejoin: round;
-  fill: #cccccc;
+  fill: #ffffff7e;
 }
 
 #map-content .selected-county {
-  fill: #ffffff !important;
+  fill: #f03d46 !important;
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
 }
