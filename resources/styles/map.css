@@ -9,7 +9,7 @@
 body {
   height: 1080px;
   width: 1920px;
-  background-image: linear-gradient(31.8deg, #FF848B -13.28%, #FFE8C6 48.07%, #64D5FF 104.52%);
+  background-image: linear-gradient(85deg, black 0%, #0099ff 32%, #94d9d9 74%);
 }
 
 #content {
@@ -81,15 +81,33 @@ body {
 }
 
 .Bennet {
-  fill: red;
-  color: red;
-  opacity: 60%;
+  fill: #757130;
+  color: #757130;
 }
 
 .Biden {
-  fill: green;
-  color: green;
-  opacity: 60%;
+  fill: #285e21;
+  color: #285e21;
+}
+
+.Bloomberg {
+  fill: #5f1e44;
+  color: #5f1e44;
+}
+
+.Warren {
+  fill: #0d5f54;
+  color: #0d5f54;
+}
+
+.Sanders {
+  fill: #533db5;
+  color: #533db5;
+}
+
+.Gabbard {
+  fill: #b47d2e;
+  color: #b47d2e;
 }
 
 #sideBar {
@@ -112,22 +130,25 @@ body {
   font-weight: 600;
   font-size: 50px;
   line-height: 100%;
+  padding: 5px;
   /* or 64px */
   color: #ffffff;
 }
 
 #sideBar #county-name-display {
   font-weight: 400;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 100%;
+  padding: 5px;
   /* or 64px */
   color: #ffffff;
 }
 
 #sideBar #reporting {
   font-weight: 400;
-  font-size: 35px;
+  font-size: 25px;
   line-height: 100%;
+  padding: 5px;
   /* or 64px */
   color: #ffffff;
 }
@@ -145,7 +166,7 @@ body {
   margin: 20px 0;
   width: 600px;
   height: 130px;
-  background: blue;
+  background: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

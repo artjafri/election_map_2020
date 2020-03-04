@@ -21,6 +21,7 @@ $(document).ready(function() {
 
 		function callBack(response) {
 			controlData = response;
+			console.log(controlData.ElectionPlaylist.contest[0].id)
 			currentState = selectedState;
 			
 			countyLead();
@@ -51,8 +52,11 @@ $(document).ready(function() {
 		
 		}
 
-		var countyLead = function() {
-			$.each(controlData.ElectionPlaylist.contest, function(i, contest) {
+		var countyLead = function () {
+			
+			$.each(controlData.ElectionPlaylist.contest, function (i, contest) {
+				let theContestID = this.id;
+
 				let name = this.area.name;
 				var contestName = name.substring(nameSize, name.length);
 				contestName = contestName.toLowerCase();
@@ -61,12 +65,16 @@ $(document).ready(function() {
 				// var printMe = $(contestName);
 
 				$.each(counties, function (i, colorCounty) {
+					
+					var countyId = $(this).data('contest')
+					// var idCheck = countyId.toLowerCase();
 
-					var countyId = colorCounty.id;
-					var idCheck = countyId.toLowerCase();
-					console.log(idCheck, contestName)
-					if (idCheck == contestName) {
-						$(this).addClass(colorChoice); 
+					
+					//console.log(idCheck, contestName)
+					if (countyId == theContestID) {
+						$(this).addClass(colorChoice);
+					// 	$(this).attr('data-contest', theContestID);
+					// 	console.log(theContestID, $(this).data('contest'))
 					}
 				});
 				//add the color attribute here and then fill in the choice in the sidebar when selected
@@ -114,7 +122,7 @@ $(document).ready(function() {
 						};
 
 						$('#candidates').append(
-							$('<div/>', { class: 'candidate' }).append(
+							$('<div/>', { class: 'candidate'}).append(
 								$('<img/>', { class: 'portrait', src: candidate.photo }),
 								$('<div/>', { class: 'subSec-1' }).append(
 									$('<h1/>', {
