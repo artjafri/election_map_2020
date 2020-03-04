@@ -63,6 +63,7 @@ body {
   stroke: #201f1f;
   stroke-width: 3px;
   stroke-linejoin: round;
+  fill: #cccccc;
 }
 
 #map-content .selected-county {

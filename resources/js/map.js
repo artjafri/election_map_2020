@@ -21,13 +21,16 @@ $(document).ready(function() {
 
 		function callBack(response) {
 			controlData = response;
-			console.log(controlData.ElectionPlaylist.contest[0].id)
+
+			console.log("selected county" + selectedCounty);
+			
 			currentState = selectedState;
 			
 			countyLead();
 
 			if (previousState != currentState) {
-				console.log(previousState, currentState, "did it change?")
+
+				console.log(previousState, currentState, "did it change?");
 				activateState();
 			}
 			
@@ -53,26 +56,18 @@ $(document).ready(function() {
 		}
 
 		var countyLead = function () {
+			console.log("county lead " + selectedCounty)
 			
 			$.each(controlData.ElectionPlaylist.contest, function (i, contest) {
-				let theContestID = this.id;
-
 				let name = this.area.name;
-				var contestName = name.substring(nameSize, name.length);
-				contestName = contestName.toLowerCase();
-
-				let colorChoice = this.choice[0].notes;
 				// var printMe = $(contestName);
-
-				$.each(counties, function (i, colorCounty) {
+				$.each(counties, function (i, colorCounty) {				
 					
 					var countyId = $(this).data('contest')
-					// var idCheck = countyId.toLowerCase();
 
-					
-					//console.log(idCheck, contestName)
-					if (countyId == theContestID) {
-						$(this).addClass(colorChoice);
+					if (countyId == selectedCounty) {
+						console.log("counties in county lead " + $(this).data('contest'))
+						$(colorCounty).addClass(selectedCounty);
 					// 	$(this).attr('data-contest', theContestID);
 					// 	console.log(theContestID, $(this).data('contest'))
 					}
